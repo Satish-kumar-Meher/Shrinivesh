@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import AboutComp from '../components/AboutComp';
+import CounterSection from '../components/CounterSection';
+import SecureSection from '../components/SecureSection';
 
 const slides = [
   {
@@ -170,6 +172,8 @@ const Home = () => {
       </div>
     </div>
     <AboutComp/>
+    <CounterSection/>
+    <SecureSection/>
     </>
   );
 };

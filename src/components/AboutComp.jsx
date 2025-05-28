@@ -320,7 +320,7 @@ const outerHoverGlow = darkMode
           className={`max-w-xl text-center md:text-left p-8 rounded-3xl backdrop-blur-lg border border-white/10 ${glassBg} ${innerGlow} ${outerHoverGlow} shadow-2xl transition duration-300`}
         >
           <motion.p
-            className="mb-2 font-semibold tracking-wide"
+            className="mb-2 text-3xl font-semibold tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
