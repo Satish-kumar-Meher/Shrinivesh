@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import AboutComp from '../components/AboutComp';
 import CounterSection from '../components/CounterSection';
 import SecureSection from '../components/SecureSection';
+import TopMutualFunds from '../components/TopMutualFunds';
 
 const slides = [
   {
@@ -174,6 +175,7 @@ const Home = () => {
     <AboutComp/>
     <CounterSection/>
     <SecureSection/>
+    <TopMutualFunds/>
     </>
   );
 };
