@@ -7,6 +7,11 @@ import AboutComp from '../components/AboutComp';
 import CounterSection from '../components/CounterSection';
 import SecureSection from '../components/SecureSection';
 import TopMutualFunds from '../components/TopMutualFunds';
+import InvestmentReturns from '../components/InvestmentCalc';
+import TestimonialSlider from '../components/Testimonials';
+import LatestBlog from '../components/BlogLatest';
+import LatestNews from '../components/LatestNews';
+import AMCMarquee from '../components/AMCMarquee';
 
 const slides = [
   {
@@ -24,6 +29,46 @@ const slides = [
       "Higher education prices are rising in India. Mutual fund investments can help you build a corpus large enough to match your child's aspirations.Start early to take full advantage of compounding.",
     buttonText: "Plan Child's Education",
     image: "https://www.moneysmatter.com/images/banners/home-banner.png",
+  },
+  {
+    title: "The best gift you can give",
+    highlight: "them is their dream.",
+    description:
+      "A wedding is special. When we are speaking of your child's wedding, you would not want to let lack of funds be a reason for their special day.being less than enchanting. Let us help you with investment suggestions that can help you achieve their dreams.",
+    buttonText: "Plan Child's Wedding",
+    image: "https://www.moneysmatter.com/images/banners/home-banner-3.png",
+  },
+  {
+    title: "Invest regularly and grow",
+    highlight: "steadily with SIP for a secure future.",
+    description:
+      "SIP (Systematic Investment Plan) encourages consistent, small investments over time, helping build wealth steadily. It offers a disciplined approach to achieve long-term financial security and growth.",
+    buttonText: "Plan SIP",
+    image: "https://www.moneysmatter.com/images/banners/home-banner-4.png",
+  },
+  {
+    title: "Create wealth steadily through smart investments",
+    highlight: "and long-term financial planning.",
+    description:
+      "Wealth creation involves making smart, consistent investments over time. By focusing on long-term goals and strategic planning, individuals can build financial security and prosperity.",
+    buttonText: "Plan Wealth Creation",
+    image: "https://www.moneysmatter.com/images/banners/home-banner-5.png",
+  },
+  {
+    title: "Protect your loved ones'",
+    highlight: "future with life insurance today.",
+    description:
+      "Life insurance ensures financial security for your loved ones in case of unforeseen events. It provides peace of mind, protecting their future and helping maintain stability.",
+    buttonText: "Plan Life Insurance",
+    image: "https://www.moneysmatter.com/images/banners/home-banner-6.png",
+  },
+  {
+    title: "Secure your health and future with reliable",
+    highlight: "health insurance coverage.",
+    description:
+      "Health insurance provides essential coverage for medical expenses, ensuring you and your family are protected during illness or emergencies. It offers financial security and peace of mind.",
+    buttonText: "Plan Health Insurance",
+    image: "https://www.moneysmatter.com/images/banners/home-banner-7.png",
   },
 ];
 
@@ -176,6 +221,11 @@ const Home = () => {
     <CounterSection/>
     <SecureSection/>
     <TopMutualFunds/>
+    <InvestmentReturns/>
+    <TestimonialSlider/>
+    <LatestBlog/>
+    <LatestNews/>
+    <AMCMarquee/>
     </>
   );
 };
