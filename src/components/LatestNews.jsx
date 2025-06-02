@@ -29,39 +29,73 @@ const LatestNews = () => {
   const subTextColor = darkMode ? "text-gray-300" : "text-gray-600";
   const primaryText = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await fetch(
-          `https://newsapi.org/v2/everything?q=mutual%20funds&language=en&sortBy=publishedAt&pageSize=6&apiKey=cbf2ee78ad4541568a5edf22b78e5460`
-        );
-        const data = await response.json();
-        if (data.articles) {
-          const articles = data.articles.map((article, index) => ({
-            id: index,
-            title: article.title,
-            description: article.description,
-            date: new Date(article.publishedAt).toLocaleDateString("en-IN", {
-              day: "2-digit",
-              month: "short",
-              year: "numeric",
-            }),
-            url: article.url,
-          }));
-          setNewsList(articles);
-        } else {
-          setNewsList([]);
-        }
-      } catch (error) {
-        console.error("Error fetching news:", error);
-        setNewsList([]);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchNews = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://newsapi.org/v2/everything?q=mutual%20funds&language=en&sortBy=publishedAt&pageSize=6&apiKey=cbf2ee78ad4541568a5edf22b78e5460`
+  //       );
+  //       const data = await response.json();
+  //       if (data.articles) {
+  //         const articles = data.articles.map((article, index) => ({
+  //           id: index,
+  //           title: article.title,
+  //           description: article.description,
+  //           date: new Date(article.publishedAt).toLocaleDateString("en-IN", {
+  //             day: "2-digit",
+  //             month: "short",
+  //             year: "numeric",
+  //           }),
+  //           url: article.url,
+  //         }));
+  //         setNewsList(articles);
+  //       } else {
+  //         setNewsList([]);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching news:", error);
+  //       setNewsList([]);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchNews();
-  }, []);
+  //   fetchNews();
+  // }, []);
+
+  useEffect(() => {
+  const fetchNews = async () => {
+    try {
+      const response = await fetch("/api/news"); // 👈 now calling your serverless function
+      const data = await response.json();
+
+      if (data.articles) {
+        const articles = data.articles.map((article, index) => ({
+          id: index,
+          title: article.title,
+          description: article.description,
+          date: new Date(article.publishedAt).toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          }),
+          url: article.url,
+        }));
+        setNewsList(articles);
+      } else {
+        setNewsList([]);
+      }
+    } catch (error) {
+      console.error("Error fetching news:", error);
+      setNewsList([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchNews();
+}, []);
+
 
   return (
     <section
