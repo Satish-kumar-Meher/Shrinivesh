@@ -12,6 +12,7 @@ import TestimonialSlider from '../components/Testimonials';
 import LatestBlog from '../components/BlogLatest';
 import LatestNews from '../components/LatestNews';
 import AMCMarquee from '../components/AMCMarquee';
+import AssetAllocation from '../components/AssetAllocation';
 
 const slides = [
   {
@@ -222,10 +223,12 @@ const Home = () => {
     <SecureSection/>
     <TopMutualFunds/>
     <InvestmentReturns/>
+     <AssetAllocation/>
     <TestimonialSlider/>
     <LatestBlog/>
     <LatestNews/>
     <AMCMarquee/>
+   
     </>
   );
 };
