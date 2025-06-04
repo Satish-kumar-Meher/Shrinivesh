@@ -97,6 +97,29 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+  const cursor = document.getElementById("cursor");
+  const moveCursor = (e) => {
+    // cursor.style.top = `${e.clientY}px`;
+    // cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+cursor.style.left = `${e.clientX}px`;
+
+  };
+  window.addEventListener("mousemove", moveCursor);
+  
+
+window.addEventListener("mousedown", () => {
+  cursor.style.transform = "scale(2)";
+});
+window.addEventListener("mouseup", () => {
+  cursor.style.transform = "scale(1)";
+});
+
+
+  return () => window.removeEventListener("mousemove", moveCursor);
+}, []);
+
   const nextSlide = () => setCurrent((current + 1) % slides.length);
   const prevSlide = () => setCurrent((current - 1 + slides.length) % slides.length);
 
@@ -109,6 +132,13 @@ const Home = () => {
           : 'bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]'
       }`}
     >
+      {/* Glowing Cursor */}
+<motion.div
+  className="cursor-glow"
+  animate={{ x: 0, y: 0 }}
+  transition={{ type: "spring", stiffness: 100 }}
+  id="cursor"
+/>
       <Bubbles darkMode={darkMode} />
 
       <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-16 gap-10 max-w-7xl w-full z-10">

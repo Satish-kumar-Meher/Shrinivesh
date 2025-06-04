@@ -1,14 +1,31 @@
+
+
 import React, { useState } from "react";
-import { FaSun, FaMoon, FaCalculator, FaChartLine, FaBullseye, FaListUl, FaInfoCircle, FaPhoneAlt, FaHome, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaSun,
+  FaMoon,
+  FaCalculator,
+  FaChartLine,
+  FaBullseye,
+  FaListUl,
+  FaInfoCircle,
+  FaPhoneAlt,
+  FaHome,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleScreenMode } from "../redux/modeSlice.js";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.screenMode.mode);
+  const navigate = useNavigate();
+  const location = useLocation(); // 👈 Get the current route path
+
   const accentColor = darkMode ? "#10e2ea" : "#0e6371";
   const hoverBgColor = darkMode ? "#10e2ea" : "#0e6371";
   const hoverTextColor = darkMode ? "#000" : "#fff";
@@ -16,56 +33,69 @@ const Navbar = () => {
   const loginTextColor = darkMode ? "text-black" : "text-white";
 
   const navItems = [
-    { name: "Home", icon: <FaHome /> },
-    { name: "About", icon: <FaInfoCircle /> },
-    { name: "Services", icon: <FaListUl /> },
-    { name: "Calculators", icon: <FaCalculator /> },
-    { name: "MF Research", icon: <FaChartLine /> },
-    { name: "Goals", icon: <FaBullseye /> },
-    { name: "More", icon: <FaListUl /> },
-    { name: "Contact", icon: <FaPhoneAlt /> },
+    { name: "Home", icon: <FaHome />, link: "/" },
+    { name: "About", icon: <FaInfoCircle />, link: "/about" },
+    { name: "Services", icon: <FaListUl />, link: "/services" },
+    { name: "Calculators", icon: <FaCalculator />, link: "/calculators" },
+    { name: "MF Research", icon: <FaChartLine />, link: "/mf_research" },
+    { name: "Goals", icon: <FaBullseye />, link: "/goals" },
+    { name: "More", icon: <FaListUl />, link: "/more" },
+    { name: "Contact", icon: <FaPhoneAlt />, link: "/contact" },
   ];
 
-  const handleLinkClick = (name) => {
-    setActiveLink(name);
+  const handleLinkClick = (link) => {
+    navigate(link);
+    setMenuOpen(false);
+  };
+
+  const isActive = (link) => {
+    return location.pathname === link;
   };
 
   return (
-    // <nav
-    //   className={`relative h-20 z-50 mx-auto  w-[100%] max-w-8xl flex justify-between items-center px-6 py-4  backdrop-blur-md transition-all duration-500 shadow-[0_0_30px_6px_rgba(0,0,0,0.15)] ${darkMode ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]" : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]"}`}
-    // >
     <nav
-  className={`fixed top-0 left-0 w-full h-20 z-50 mx-auto max-w-8xl flex justify-between items-center px-6 py-4 backdrop-blur-md transition-all duration-500 shadow-[0_0_30px_6px_rgba(0,0,0,0.15)] ${
-    darkMode
-      ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
-      : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]"
-  }`}
->
-
+      className={`fixed top-0 left-0 w-full h-20 z-50 mx-auto max-w-8xl flex justify-between items-center px-6 py-4 backdrop-blur-md transition-all duration-500 shadow-[0_0_30px_6px_rgba(0,0,0,0.15)] ${
+        darkMode
+          ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
+          : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]"
+      }`}
+    >
       <img
         className="h-20 w-auto"
         src={darkMode ? "/DarkLogo.gif" : "/LightLogo.gif"}
         alt="Sahaya Logo"
       />
 
+      {/* Desktop Nav */}
       <div className="hidden md:flex gap-6 items-center">
         {navItems.map((item) => (
           <a
-            href="#"
             key={item.name}
-            onClick={() => handleLinkClick(item.name)}
-            className={`flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${activeLink === item.name ? "scale-105" : ""}`}
+            onClick={() => handleLinkClick(item.link)}
+            className={`flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${
+              isActive(item.link) ? "scale-105" : ""
+            }`}
             style={{
-              backgroundColor: activeLink === item.name ? accentColor : "transparent",
-              color: activeLink === item.name ? hoverTextColor : darkMode ? "#fff" : "#111",
+              backgroundColor: isActive(item.link) ? accentColor : "transparent",
+              color: isActive(item.link)
+                ? hoverTextColor
+                : darkMode
+                ? "#fff"
+                : "#111",
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = hoverBgColor;
               e.target.style.color = hoverTextColor;
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = activeLink === item.name ? accentColor : "transparent";
-              e.target.style.color = activeLink === item.name ? hoverTextColor : darkMode ? "#fff" : "#111";
+              e.target.style.backgroundColor = isActive(item.link)
+                ? accentColor
+                : "transparent";
+              e.target.style.color = isActive(item.link)
+                ? hoverTextColor
+                : darkMode
+                ? "#fff"
+                : "#111";
             }}
           >
             {item.icon} {item.name}
@@ -74,7 +104,9 @@ const Navbar = () => {
 
         <motion.button
           onClick={() => dispatch(toggleScreenMode())}
-          className={`relative w-14 h-7 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+          className={`relative w-14 h-7 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${
+            darkMode ? "bg-gray-800" : "bg-gray-200"
+          }`}
           whileTap={{ scale: 0.95 }}
         >
           <motion.div
@@ -94,10 +126,13 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Nav Toggle */}
       <div className="md:hidden flex items-center gap-2 z-50">
         <motion.button
           onClick={() => dispatch(toggleScreenMode())}
-          className={`relative w-14 h-8 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+          className={`relative w-14 h-8 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${
+            darkMode ? "bg-gray-800" : "bg-gray-200"
+          }`}
           whileTap={{ scale: 0.95 }}
         >
           <motion.div
@@ -110,35 +145,51 @@ const Navbar = () => {
         </motion.button>
 
         <button onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FaTimes className= {`text-2xl ${darkMode ? "text-white" : "text-black"}`} /> : <FaBars className= {`text-2xl ${darkMode ? "text-white" : "text-black"}`} />}
+          {menuOpen ? (
+            <FaTimes className={`text-2xl ${darkMode ? "text-white" : "text-black"}`} />
+          ) : (
+            <FaBars className={`text-2xl ${darkMode ? "text-white" : "text-black"}`} />
+          )}
         </button>
       </div>
 
+      {/* Mobile Drawer */}
       {menuOpen && (
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "tween", duration: 0.3 }}
-          className={`fixed top-22 right-4 w-44 p-4 rounded-lg shadow-xl flex flex-col gap-4 md:hidden ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
+          className={`fixed top-22 right-4 w-44 p-4 rounded-lg shadow-xl flex flex-col gap-4 md:hidden ${
+            darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+          }`}
         >
           {navItems.map((item) => (
             <a
               key={item.name}
-              href="#"
-              onClick={() => handleLinkClick(item.name)}
+              onClick={() => handleLinkClick(item.link)}
               className="flex items-center gap-2 px-3 py-2 rounded-md transition hover:scale-105"
               style={{
-                backgroundColor: activeLink === item.name ? accentColor : "transparent",
-                color: activeLink === item.name ? hoverTextColor : darkMode ? "#fff" : "#111",
+                backgroundColor: isActive(item.link) ? accentColor : "transparent",
+                color: isActive(item.link)
+                  ? hoverTextColor
+                  : darkMode
+                  ? "#fff"
+                  : "#111",
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = hoverBgColor;
                 e.target.style.color = hoverTextColor;
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = activeLink === item.name ? accentColor : "transparent";
-                e.target.style.color = activeLink === item.name ? hoverTextColor : darkMode ? "#fff" : "#111";
+                e.target.style.backgroundColor = isActive(item.link)
+                  ? accentColor
+                  : "transparent";
+                e.target.style.color = isActive(item.link)
+                  ? hoverTextColor
+                  : darkMode
+                  ? "#fff"
+                  : "#111";
               }}
             >
               {item.icon} {item.name}
@@ -166,55 +217,101 @@ export default Navbar;
 
 
 
-
-
 // import React, { useState } from "react";
-// import { FaSun, FaMoon, FaCalculator, FaChartLine, FaBullseye, FaListUl, FaInfoCircle, FaPhoneAlt, FaHome, FaBars, FaTimes } from "react-icons/fa";
+// import {
+//   FaSun,
+//   FaMoon,
+//   FaCalculator,
+//   FaChartLine,
+//   FaBullseye,
+//   FaListUl,
+//   FaInfoCircle,
+//   FaPhoneAlt,
+//   FaHome,
+//   FaBars,
+//   FaTimes,
+// } from "react-icons/fa";
 // import { motion } from "framer-motion";
 // import { useDispatch, useSelector } from "react-redux";
 // import { toggleScreenMode } from "../redux/modeSlice.js";
+// import { useNavigate } from "react-router";
 
 // const Navbar = () => {
 //   const [menuOpen, setMenuOpen] = useState(false);
+//   const [activeLink, setActiveLink] = useState("Home");
 //   const dispatch = useDispatch();
 //   const darkMode = useSelector((state) => state.screenMode.mode);
-//   const accentColor = darkMode ? "#8AB4F8" : "#6C63FF";
+//   const navigate = useNavigate();
+
+//   const accentColor = darkMode ? "#10e2ea" : "#0e6371";
+//   const hoverBgColor = darkMode ? "#10e2ea" : "#0e6371";
+//   const hoverTextColor = darkMode ? "#000" : "#fff";
+//   const loginBgColor = darkMode ? "#10e2ea" : "#0e6371";
+//   const loginTextColor = darkMode ? "text-black" : "text-white";
 
 //   const navItems = [
-//     { name: "Home", icon: <FaHome /> },
-//     { name: "About", icon: <FaInfoCircle /> },
-//     { name: "Services", icon: <FaListUl /> },
-//     { name: "Calculators", icon: <FaCalculator /> },
-//     { name: "MF Research", icon: <FaChartLine /> },
-//     { name: "Goals", icon: <FaBullseye /> },
-//     { name: "More", icon: <FaListUl /> },
-//     { name: "Contact", icon: <FaPhoneAlt /> },
+//     { name: "Home", icon: <FaHome />, link: "/" },
+//     { name: "About", icon: <FaInfoCircle />, link: "/about" },
+//     { name: "Services", icon: <FaListUl />, link: "/services" },
+//     { name: "Calculators", icon: <FaCalculator />, link: "/calculators" },
+//     { name: "MF Research", icon: <FaChartLine />, link: "/mf_research" },
+//     { name: "Goals", icon: <FaBullseye />, link: "/goals" },
+//     { name: "More", icon: <FaListUl />, link: "/more" },
+//     { name: "Contact", icon: <FaPhoneAlt />, link: "/contact" },
 //   ];
+
+//   const handleLinkClick = (name, link) => {
+//     setActiveLink(name);
+//     navigate(link);
+//     setMenuOpen(false); // Close mobile menu after click
+//   };
 
 //   return (
 //     <nav
-//       className={`relative h-18 z-50 mx-auto my-1 w-[90%] max-w-8xl flex justify-between items-center  px-6 py-4 rounded-full backdrop-blur-md transition-all duration-500 shadow-[0_0_30px_6px_rgba(0,0,0,0.15)] ${darkMode ? "bg-gradient-to-r from-gray-800 to-gray-700" : "bg-gradient-to-r from-white to-blue-100"}`}
+//       className={`fixed top-0 left-0 w-full h-20 z-50 mx-auto max-w-8xl flex justify-between items-center px-6 py-4 backdrop-blur-md transition-all duration-500 shadow-[0_0_30px_6px_rgba(0,0,0,0.15)] ${
+//         darkMode
+//           ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
+//           : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]"
+//       }`}
 //     >
 //       <img
 //         className="h-20 w-auto"
-//         src={darkMode ? "/SAHAYA2.gif" : "/SAHAYA1.gif"}
+//         src={darkMode ? "/DarkLogo.gif" : "/LightLogo.gif"}
 //         alt="Sahaya Logo"
 //       />
 
+//       {/* Desktop Nav */}
 //       <div className="hidden md:flex gap-6 items-center">
 //         {navItems.map((item) => (
 //           <a
-//             href="#"
 //             key={item.name}
-//             className="flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm"
-//             style={{ color: darkMode ? "#fff" : "#111" }}
+//             onClick={() => handleLinkClick(item.name, item.link)}
+//             className={`flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${
+//               activeLink === item.name ? "scale-105" : ""
+//             }`}
+//             style={{
+//               backgroundColor:
+//                 activeLink === item.name ? accentColor : "transparent",
+//               color:
+//                 activeLink === item.name
+//                   ? hoverTextColor
+//                   : darkMode
+//                   ? "#fff"
+//                   : "#111",
+//             }}
 //             onMouseEnter={(e) => {
-//               e.target.style.backgroundColor = accentColor;
-//               e.target.style.color = darkMode ? "#000" : "#fff";
+//               e.target.style.backgroundColor = hoverBgColor;
+//               e.target.style.color = hoverTextColor;
 //             }}
 //             onMouseLeave={(e) => {
-//               e.target.style.backgroundColor = "transparent";
-//               e.target.style.color = darkMode ? "#fff" : "#111";
+//               e.target.style.backgroundColor =
+//                 activeLink === item.name ? accentColor : "transparent";
+//               e.target.style.color =
+//                 activeLink === item.name
+//                   ? hoverTextColor
+//                   : darkMode
+//                   ? "#fff"
+//                   : "#111";
 //             }}
 //           >
 //             {item.icon} {item.name}
@@ -223,7 +320,9 @@ export default Navbar;
 
 //         <motion.button
 //           onClick={() => dispatch(toggleScreenMode())}
-//           className={`relative w-14 h-7 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+//           className={`relative w-14 h-7 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${
+//             darkMode ? "bg-gray-800" : "bg-gray-200"
+//           }`}
 //           whileTap={{ scale: 0.95 }}
 //         >
 //           <motion.div
@@ -231,22 +330,29 @@ export default Navbar;
 //             animate={{ x: darkMode ? 24 : 0 }}
 //             transition={{ type: "spring", stiffness: 300, damping: 20 }}
 //           >
-//             {darkMode ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
+//             {darkMode ? (
+//               <FaSun className="text-sm" />
+//             ) : (
+//               <FaMoon className="text-sm" />
+//             )}
 //           </motion.div>
 //         </motion.button>
 
 //         <button
-//           style={{ backgroundColor: accentColor }}
-//           className={`px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transition-all duration-300 ${darkMode ? "text-black" : "text-white"}`}
+//           style={{ backgroundColor: loginBgColor }}
+//           className={`px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transition-all duration-300 ${loginTextColor}`}
 //         >
 //           Login
 //         </button>
 //       </div>
 
+//       {/* Mobile Menu Button */}
 //       <div className="md:hidden flex items-center gap-2 z-50">
 //         <motion.button
 //           onClick={() => dispatch(toggleScreenMode())}
-//           className={`relative w-14 h-8 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+//           className={`relative w-14 h-8 flex items-center rounded-full px-1 shadow-md transition-colors duration-500 ${
+//             darkMode ? "bg-gray-800" : "bg-gray-200"
+//           }`}
 //           whileTap={{ scale: 0.95 }}
 //         >
 //           <motion.div
@@ -254,36 +360,70 @@ export default Navbar;
 //             animate={{ x: darkMode ? 24 : 0 }}
 //             transition={{ type: "spring", stiffness: 300, damping: 20 }}
 //           >
-//             {darkMode ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
+//             {darkMode ? (
+//               <FaSun className="text-sm" />
+//             ) : (
+//               <FaMoon className="text-sm" />
+//             )}
 //           </motion.div>
 //         </motion.button>
 
 //         <button onClick={() => setMenuOpen(!menuOpen)}>
-//           {menuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
+//           {menuOpen ? (
+//             <FaTimes
+//               className={`text-2xl ${
+//                 darkMode ? "text-white" : "text-black"
+//               }`}
+//             />
+//           ) : (
+//             <FaBars
+//               className={`text-2xl ${
+//                 darkMode ? "text-white" : "text-black"
+//               }`}
+//             />
+//           )}
 //         </button>
 //       </div>
 
+//       {/* Mobile Drawer */}
 //       {menuOpen && (
 //         <motion.div
 //           initial={{ x: "100%" }}
 //           animate={{ x: 0 }}
 //           exit={{ x: "100%" }}
 //           transition={{ type: "tween", duration: 0.3 }}
-//           className={`fixed top-20 right-4 w-44 p-4 rounded-lg shadow-xl flex flex-col gap-4 md:hidden ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
+//           className={`fixed top-22 right-4 w-44 p-4 rounded-lg shadow-xl flex flex-col gap-4 md:hidden ${
+//             darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+//           }`}
 //         >
 //           {navItems.map((item) => (
 //             <a
 //               key={item.name}
-//               href="#"
+//               onClick={() => handleLinkClick(item.name, item.link)}
 //               className="flex items-center gap-2 px-3 py-2 rounded-md transition hover:scale-105"
-//               style={{ color: darkMode ? "#fff" : "#111" }}
+//               style={{
+//                 backgroundColor:
+//                   activeLink === item.name ? accentColor : "transparent",
+//                 color:
+//                   activeLink === item.name
+//                     ? hoverTextColor
+//                     : darkMode
+//                     ? "#fff"
+//                     : "#111",
+//               }}
 //               onMouseEnter={(e) => {
-//                 e.target.style.backgroundColor = accentColor;
-//                 e.target.style.color = darkMode ? "#000" : "#fff";
+//                 e.target.style.backgroundColor = hoverBgColor;
+//                 e.target.style.color = hoverTextColor;
 //               }}
 //               onMouseLeave={(e) => {
-//                 e.target.style.backgroundColor = "transparent";
-//                 e.target.style.color = darkMode ? "#fff" : "#111";
+//                 e.target.style.backgroundColor =
+//                   activeLink === item.name ? accentColor : "transparent";
+//                 e.target.style.color =
+//                   activeLink === item.name
+//                     ? hoverTextColor
+//                     : darkMode
+//                     ? "#fff"
+//                     : "#111";
 //               }}
 //             >
 //               {item.icon} {item.name}
@@ -291,8 +431,8 @@ export default Navbar;
 //           ))}
 
 //           <button
-//             style={{ backgroundColor: accentColor }}
-//             className={`px-4 py-2 rounded-full font-semibold hover:scale-105 transition ${darkMode ? "text-black" : "text-white"}`}
+//             style={{ backgroundColor: loginBgColor }}
+//             className={`px-4 py-2 rounded-full font-semibold hover:scale-105 transition ${loginTextColor}`}
 //           >
 //             Login
 //           </button>
@@ -303,6 +443,12 @@ export default Navbar;
 // };
 
 // export default Navbar;
+
+
+
+
+
+
 
 
 

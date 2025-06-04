@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import ErrorPage from './pages/ErrorPage';
 import AppLayout from './components/AppLayout';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+
 
 
 const router = createBrowserRouter([
@@ -16,11 +18,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home/>,
       },
+      {
+        path: "/about",
+        element: <AboutUs/>,
+      },
     ],
   },
 ])
 
 function App() {
+
   return <RouterProvider router={router}> </RouterProvider>;
 }
 

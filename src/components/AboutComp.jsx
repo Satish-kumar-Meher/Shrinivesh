@@ -1,9 +1,11 @@
 
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 const AboutSection = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
+  const navigate = useNavigate()
 
   // Main background gradient
   const bgGradient = darkMode
@@ -19,7 +21,9 @@ const AboutSection = () => {
   // const innerGlow = "shadow-[inset_0_0_20px_rgba(16,226,234,0.3)]";
   // const outerHoverGlow = "hover:shadow-[0_0_25px_rgba(16,226,234,0.45)]";
 
-
+const handleNavigation = () => {
+  navigate("/about")
+}
 
   // Inner and outer glow colors based on theme
 const innerGlow = darkMode
@@ -77,7 +81,9 @@ const outerHoverGlow = darkMode
               darkMode
                 ? "bg-[#10e2ea] hover:bg-[#efe043] text-black shadow-cyan-400/40"
                 : "bg-[#0e6371] hover:bg-[#a79811] text-white shadow-cyan-600/30"
-            }`}
+            }` 
+          }
+        onClick={handleNavigation}
           >
             Know More
           </motion.button>
