@@ -224,39 +224,13 @@ const Services = () => {
     <section
       className={`relative z-0 py-20 overflow-hidden ${bgGradient} transition-colors duration-500`}
     >
-      {/* Bubbles */}
-      {/* <motion.div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {[...Array(12)].map((_, i) => {
-          const size = 16 + i * 2;
-          const top = `${Math.random() * 90}%`;
-          const left = `${Math.random() * 90}%`;
-          const color = darkMode ? "#10e2ea" : "#0e6371";
 
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                width: size,
-                height: size,
-                top,
-                left,
-                backgroundColor: color,
-                opacity: 0.12,
-                boxShadow: `0 0 20px 5px ${color}`,
-              }}
-              animate={{ y: [0, -20, 0], x: [0, 15, 0], scale: [1, 1.1, 1] }}
-              transition={{ duration: 6 + i * 0.3, repeat: Infinity, delay: i * 0.15 }}
-            />
-          );
-        })}
-      </motion.div> */}
       
     <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className={`text-4xl sm:text-5xl font-bold ${highlight}`}>
+        <div className="text-center mb-12 ">
+          <h2 className={`text-4xl sm:text-5xl mt-10 font-bold ${highlight}`}>
             Our Premium <span className={textColor}>Services</span>
           </h2>
           <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto ${textColor}`}>
