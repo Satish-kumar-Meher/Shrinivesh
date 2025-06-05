@@ -1,6 +1,7 @@
 
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { Bubbles } from "../../utils/Bubble";
 
 const amcLogos = [
   {
@@ -110,46 +111,8 @@ const headingColor = darkMode ? "text-[#efe043]" : "text-[#627d32]";
 
   return (
     <section className={`relative py-20 overflow-hidden ${bgGradient}`}>
-      {/* Bubble Background Effect */}
-      <motion.div
-        className="absolute inset-0 z-0 pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        {[...Array(15)].map((_, i) => {
-          const size = 5 + i * 8;
-          const top = `${Math.random() * 100}%`;
-          const left = `${Math.random() * 100}%`;
-          const bubbleColor = darkMode ? "#10e2ea" : "#0e6371";
-
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-                top,
-                left,
-                backgroundColor: bubbleColor,
-                opacity: 0.12,
-                boxShadow: `0 0 20px 5px ${bubbleColor}`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                x: [0, 15, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 6 + i * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.2,
-              }}
-            />
-          );
-        })}
-      </motion.div>
+     
+      <Bubbles darkMode={darkMode} />
 
       {/* Foreground Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

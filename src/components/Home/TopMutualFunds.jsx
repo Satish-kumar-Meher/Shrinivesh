@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Bubbles } from "../../utils/Bubble";
 
 const TopMutualFunds = () => {
   const [funds, setFunds] = useState([]);
@@ -54,34 +55,8 @@ const TopMutualFunds = () => {
 
   return (
     <section className={`relative py-20 px-4 md:px-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
-      {/* Background Bubbles */}
-      <motion.div className="absolute inset-0 z-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => {
-          const size = 30 + Math.random() * 60;
-          const top = `${Math.random() * 100}%`;
-          const left = `${Math.random() * 100}%`;
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-                top,
-                left,
-                backgroundColor: bubbleColor,
-                boxShadow: `0 0 25px 10px ${bubbleColor}`,
-              }}
-              animate={{ y: [0, -40, 0], opacity: [0.3, 0.7, 0.3] }}
-              transition={{
-                duration: 12 + Math.random() * 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          );
-        })}
-      </motion.div>
+     
+      <Bubbles darkMode={darkMode} />
 
       {/* Header + Dropdown */}
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-12 gap-4">

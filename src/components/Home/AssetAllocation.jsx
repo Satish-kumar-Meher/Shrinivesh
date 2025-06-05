@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import { Bubbles } from "../../utils/Bubble";
 
 const allocationModels = [
   {
@@ -74,41 +75,8 @@ const ModelAssetAllocation = () => {
     <section
       className={`relative z-0 py-20 transition-colors duration-500 overflow-hidden ${bgGradient}`}
     >
-      {/* Glowing Bubbles */}
-      <motion.div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {[...Array(15)].map((_, i) => {
-          const size = 20 + i * 4;
-          const top = `${Math.random() * 80}%`;
-          const left = `${Math.random() * 90}%`;
-          const color = darkMode ? "#10e2ea" : "#0e6371";
-
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                width: size,
-                height: size,
-                top,
-                left,
-                backgroundColor: color,
-                opacity: 0.12,
-                boxShadow: `0 0 20px 5px ${color}`,
-              }}
-              animate={{
-                y: [0, -15, 0],
-                x: [0, 10, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 6 + i * 0.3,
-                repeat: Infinity,
-                delay: i * 0.2,
-              }}
-            />
-          );
-        })}
-      </motion.div>
+      
+      <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <h2 className={`text-3xl sm:text-4xl font-bold mb-8 ${titleColor}`}>

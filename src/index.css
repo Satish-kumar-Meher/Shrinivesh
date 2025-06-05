@@ -8,9 +8,11 @@
   height: 1px;
   border-radius: 50%;
   /* background: rgba(127, 121, 241, 0.7); */
-  background: rgba(16, 226, 234, 0.6);
+  /* background: rgba(16, 226, 234, 0.6); */
+    background: rgba(14, 99, 113, 0.6);
   /* box-shadow: 0 0 80px 40px rgba(152, 148, 225, 0.6); */
   box-shadow: 0 0 80px 40px rgba(16, 226, 234, 0.6);
+    /* box-shadow: 0 0 80px 40px rgba(14, 99, 113, 0.6); */
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);

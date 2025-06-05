@@ -3,16 +3,17 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import AboutComp from '../components/AboutComp';
-import CounterSection from '../components/CounterSection';
-import SecureSection from '../components/SecureSection';
-import TopMutualFunds from '../components/TopMutualFunds';
-import InvestmentReturns from '../components/InvestmentCalc';
-import TestimonialSlider from '../components/Testimonials';
-import LatestBlog from '../components/BlogLatest';
-import LatestNews from '../components/LatestNews';
-import AMCMarquee from '../components/AMCMarquee';
-import AssetAllocation from '../components/AssetAllocation';
+import AboutComp from '../components/Home/AboutComp';
+import CounterSection from '../components/Home/CounterSection';
+import SecureSection from '../components/Home/SecureSection';
+import TopMutualFunds from '../components/Home/TopMutualFunds';
+import InvestmentReturns from '../components/Home/InvestmentCalc';
+import TestimonialSlider from '../components/Home/Testimonials';
+import LatestBlog from '../components/Home/BlogLatest';
+import LatestNews from '../components/Home/LatestNews';
+import AMCMarquee from '../components/Home/AMCMarquee';
+import AssetAllocation from '../components/Home/AssetAllocation';
+import { Bubbles } from '../utils/Bubble';
 
 const slides = [
   {
@@ -97,28 +98,6 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-  const cursor = document.getElementById("cursor");
-  const moveCursor = (e) => {
-    // cursor.style.top = `${e.clientY}px`;
-    // cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-cursor.style.left = `${e.clientX}px`;
-
-  };
-  window.addEventListener("mousemove", moveCursor);
-  
-
-window.addEventListener("mousedown", () => {
-  cursor.style.transform = "scale(2)";
-});
-window.addEventListener("mouseup", () => {
-  cursor.style.transform = "scale(1)";
-});
-
-
-  return () => window.removeEventListener("mousemove", moveCursor);
-}, []);
 
   const nextSlide = () => setCurrent((current + 1) % slides.length);
   const prevSlide = () => setCurrent((current - 1 + slides.length) % slides.length);
@@ -132,13 +111,6 @@ window.addEventListener("mouseup", () => {
           : 'bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]'
       }`}
     >
-      {/* Glowing Cursor */}
-<motion.div
-  className="cursor-glow"
-  animate={{ x: 0, y: 0 }}
-  transition={{ type: "spring", stiffness: 100 }}
-  id="cursor"
-/>
       <Bubbles darkMode={darkMode} />
 
       <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-16 gap-10 max-w-7xl w-full z-10">
@@ -178,18 +150,6 @@ window.addEventListener("mouseup", () => {
           >
             {slides[current].description}
           </motion.p>
-
-          {/* <motion.button
-            className={`px-6 py-2 rounded-2xl shadow-md transition ${
-              darkMode
-                ? 'bg-[#10e2ea] hover:bg-[#efe043] text-black shadow-cyan-400/20'
-                : 'bg-[#0e6371] hover:bg-[#a79811] text-white shadow-cyan-600/20'
-            }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {slides[current].buttonText}
-          </motion.button> */}
 
           <div className="w-full flex justify-center md:justify-start mt-4">
   <motion.button
@@ -263,46 +223,5 @@ window.addEventListener("mouseup", () => {
   );
 };
 
-const Bubbles = ({ darkMode }) => {
-  return (
-    <motion.div
-      className="absolute inset-0 overflow-hidden z-0 pointer-events-none"
-      aria-hidden
-    >
-      {[...Array(15)].map((_, i) => {
-        const size = 1 + Math.random() * 100;
-        const top = `${Math.random() * 100}%`;
-        const left = `${Math.random() * 100}%`;
-        const bubbleColor = darkMode ? '#10e2ea' : '#0e6371';
-
-        return (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top,
-              left,
-              backgroundColor: bubbleColor,
-              boxShadow: `0 0 25px 10px ${bubbleColor}`,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, 10, 0],
-              opacity: [0.1, 0.1, 0.1],
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 12 + Math.random() * 6,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        );
-      })}
-    </motion.div>
-  );
-};
 
 export default Home;

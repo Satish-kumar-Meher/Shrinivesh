@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { Bubbles } from "../../utils/Bubble";
 
 const AboutSection = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -107,47 +108,6 @@ const outerHoverGlow = darkMode
   );
 };
 
-const Bubbles = ({ darkMode }) => {
-  return (
-    <motion.div
-      className="absolute inset-0 overflow-hidden z-0 pointer-events-none"
-      aria-hidden
-    >
-      {[...Array(12)].map((_, i) => {
-        const size = 20 + Math.random() * 80;
-        const top = `${Math.random() * 100}%`;
-        const left = `${Math.random() * 100}%`;
-        const bubbleColor = darkMode ?"#10e2ea" :"#0e6371";
 
-        return (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top,
-              left,
-              backgroundColor: bubbleColor,
-              opacity: 0.08,
-              boxShadow: `0 0 20px 5px ${bubbleColor}`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              x: [0, 10, 0],
-              opacity: [0.04, 0.1, 0.04],
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        );
-      })}
-    </motion.div>
-  );
-};
 
 export default AboutSection;
