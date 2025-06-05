@@ -50,6 +50,8 @@ const LatestBlog = () => {
   const subTextColor = darkMode ? "text-gray-300" : "text-gray-600";
   const bubbleColor = darkMode ? "#10e2ea" : "#0e6371";
   const primaryText = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
+  const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
+
 
   return (
     <section
@@ -76,7 +78,7 @@ const LatestBlog = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              className={`rounded-3xl overflow-hidden border ${glassBg} ${innerGlow} ${outerHoverGlow} ${
+              className={`rounded-3xl overflow-hidden border ${border} ${glassBg} ${innerGlow} ${outerHoverGlow} ${
                 darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"
               } transition-transform duration-300 hover:scale-[1.02]`}
             >

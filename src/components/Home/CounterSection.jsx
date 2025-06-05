@@ -43,12 +43,14 @@ const glassBg = darkMode
     ? "bg-gradient-to-br from-[#1a2a38]/40 to-[#0b1925]/20"
     : "bg-gradient-to-br from-white/50 to-[#d2f2ff]/30";
 
+     const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
-      className={`p-6 md:p-8 rounded-3xl backdrop-blur-md border border-white/10 ${glassBg} ${innerGlow} ${outerHoverGlow} shadow-2xl transition text-center w-full`}
+      className={`p-6 md:p-8 rounded-3xl backdrop-blur-md border ${border} ${glassBg} ${innerGlow} ${outerHoverGlow} shadow-2xl transition text-center w-full`}
     >
       <div className="text-4xl font-bold text-yellow-500 mb-2">
         {count}

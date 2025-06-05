@@ -52,6 +52,9 @@ export default function InvestmentReturns() {
 
   const btnGlass = `rounded-full p-2 ${glassBg} ${innerGlow} border ${darkMode ? "border-[#10e2ea]/30" : "border-[#0e6371]/20"} transition hover:scale-105`;
 
+  const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
+
+
   return (
     <section className={`relative overflow-hidden z-0 py-16 px-4 sm:px-6 lg:px-8 ${darkMode ? "bg-[#0b0d1a]" : "bg-[#f0faff]"}`}>
 
@@ -59,7 +62,7 @@ export default function InvestmentReturns() {
 
       {/* Main Card */}
       <motion.div
-        className={`relative z-10 max-w-7xl mx-auto rounded-3xl p-8 md:p-12 border backdrop-blur-xl ${glassBg} ${innerGlow} ${outerGlow}`}
+        className={`relative z-10 max-w-7xl mx-auto rounded-3xl p-8 md:p-12 border ${border} backdrop-blur-xl ${glassBg} ${innerGlow} ${outerGlow}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >

@@ -44,7 +44,7 @@ export default function SecureSection() {
   const glassBg = darkMode
     ? "bg-gradient-to-br from-[#1a2a38]/40 to-[#0b1925]/20"
     : "bg-gradient-to-br from-white/50 to-[#d2f2ff]/30";
-
+ const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
   return (
     <section
       className={`relative overflow-hidden z-0 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-500 ${bgGradient}`}
@@ -54,7 +54,7 @@ export default function SecureSection() {
 
       {/* Glass Card */}
       <div
-        className={`mx-auto max-w-7xl rounded-3xl p-10 text-center backdrop-blur-xl border transition-all duration-300 ${glassBg} ${innerGlow} ${outerHoverGlow} ${
+        className={`mx-auto max-w-7xl ${border} rounded-3xl p-10 text-center backdrop-blur-xl border transition-all duration-300 ${glassBg} ${innerGlow} ${outerHoverGlow} ${
           darkMode ? "border-[#1de0e6]/30" : "border-[#0e6371]/20"
         }`}
       >
