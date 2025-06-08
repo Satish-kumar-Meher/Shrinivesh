@@ -6,6 +6,9 @@ import AppLayout from './components/AppLayout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
+import ContactPage from './pages/Contact';
+import Contact from './pages/Contact';
+import AllCalculators from './pages/AllCalculators';
 
 
 
@@ -26,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services/>,
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
+      },
+      {
+        path: "/calculators",
+        element: <AllCalculators/>,
       },
     ],
   },

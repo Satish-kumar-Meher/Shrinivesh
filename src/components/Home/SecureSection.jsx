@@ -5,6 +5,7 @@
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Bubbles } from "../../utils/Bubble";
+import { useNavigate } from "react-router";
 
 const features = [
   { title: "Verified By Verisign", img: "https://www.moneysmatter.com/images/home/why-us/verification.png" },
@@ -29,6 +30,8 @@ const itemVariants = {
 export default function SecureSection() {
   const { mode: darkMode } = useSelector((state) => state.screenMode); // boolean
 
+  const navigate = useNavigate()
+  
   const innerGlow = darkMode
     ? "shadow-[inset_0_0_20px_rgba(16,226,234,0.3)]"
     : "shadow-[inset_0_0_20px_rgba(14,99,113,0.25)]";
@@ -113,7 +116,7 @@ export default function SecureSection() {
           <button className={`px-6 py-2 rounded-md ${darkMode ? "bg-[#10e2ea] text-black" : "bg-[#0e6371] text-white"} hover:bg-emerald-700 hover:text-white`}>
             Start Investing with us
           </button>
-          <button className="px-6 py-2 rounded-md bg-[#efe043] text-black hover:text-white hover:bg-emerald-900 transition">
+          <button onClick={() => navigate("/contact")} className="px-6 py-2 rounded-md bg-[#efe043] text-black hover:text-white hover:bg-emerald-900 transition">
             Get Call Back
           </button>
         </div>

@@ -108,6 +108,7 @@ const TopMutualFunds = () => {
             glareEnable={true}
             glareMaxOpacity={0.4}
             glareColor={primaryColor}
+            glarePosition="all"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}

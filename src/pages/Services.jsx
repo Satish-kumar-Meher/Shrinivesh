@@ -252,6 +252,7 @@ const Services = () => {
               transitionSpeed={2000}
               tiltMaxAngleX={30}
               tiltMaxAngleY={30}
+               glarePosition="all"
               key={service.title}
             >
               {/* <motion.div
