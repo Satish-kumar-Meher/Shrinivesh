@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import ContactPage from './pages/Contact';
 import Contact from './pages/Contact';
 import AllCalculators from './pages/AllCalculators';
+import Goals from './pages/Goals';
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/calculators",
         element: <AllCalculators/>,
+      },
+      {
+        path: "/goals",
+        element: <Goals/>,
       },
     ],
   },
