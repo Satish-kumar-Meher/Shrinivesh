@@ -157,50 +157,51 @@ const Services = () => {
 
   const services = [
     {
-      title: "Mutual Fund",
-      description: "Mutual funds are financial instruments which invest in a ...",
+      title: "Mutual Fund Investments",
+      description: "Diversify your portfolio and grow wealth with expert-guided Mutual Fund solutions tailored to your goals.",
       icon: "./logos/MF.png",
     },
     {
-      title: "Life Insurance",
-      description: "Life insurance is a financial product that provides...",
+      title: "Life Insurance Planning",
+      description: "Protect your family's future with smart Life Insurance plans designed to provide long-term security and peace of mind.",
       icon: "./logos/LI.png",
     },
     {
-      title: "Health Insurance",
-      description: "Cost of quality healthcare in India has been...",
+      title: "Health Insurance Coverage",
+      description: "Ensure financial safety in medical emergencies with affordable and comprehensive Health Insurance plans.",
       icon: "./logos/HI.png",
     },
     {
-      title: "PMS",
-      description: "Portfolio Management Services or PMS, is a service offered by...",
+      title: "PMS – Portfolio Management Services",
+      description: "Let seasoned professionals manage your wealth with custom Portfolio Management Services (PMS) focused on performance and growth.",
       icon: "./logos/PMS.png",
     },
     {
-      title: "AIF",
-      description: "Alternative Investment Funds (AIFs) have emerged as a...",
+      title: "AIF – Alternative Investment Funds",
+      description: "Access high-growth opportunities through Alternative Investment Funds (AIFs) – ideal for investors seeking diversification beyond traditional assets.",
       icon: "./logos/AIF.png",
     },
     {
-      title: "Housing Loan",
-      description: "Home loan is long term product to finance the...",
+      title: "Retirement Planning Solutions",
+      description: "Plan today for a worry-free tomorrow with tailored Retirement Solutions that help you build a secure financial future and achieve lasting financial freedom.",
+      icon: "./logos/RS.png",
+    },
+    {
+      title: "Housing Loan Assistance",
+      description: "Get expert help to finance your dream home with customized Home Loan solutions and step-by-step guidance.",
       icon: "./logos/HL.png",
     },
     {
-      title: "Loan Against MF",
-      description: "This is very similar to loan against shares. You can...",
+      title: "Loan Against Mutual Funds",
+      description: "Unlock instant liquidity by availing Loans against your Mutual Fund units without redeeming your investments",
       icon: "./logos/LA.png",
     },
     {
       title: "Capital Gain Bonds",
-      description: "Capital gain bonds are financial instruments issued...",
+      description: "Save tax under Section 54EC by investing in Capital Gain Bonds, a safe and government-backed investment option.",
       icon: "./logos/CGB.png",
     },
-    {
-      title: "Retirement Solutions",
-      description: "The plan and action of accumulating a certain corpus...",
-      icon: "./logos/RS.png",
-    },
+    
   ];
 
   const bgGradient = darkMode
@@ -208,6 +209,7 @@ const Services = () => {
     : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]";
 
   const textColor = darkMode ? "text-white" : "text-black";
+  const secTextColor = darkMode ? "text-yellow-300" : "text-green-900";
   const highlight = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
   const cardGlass = darkMode
     ? "bg-gradient-to-br from-[#1a2a38]/40 to-[#0b1925]/20"
@@ -231,14 +233,15 @@ const Services = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="text-center mb-12 ">
           <h2 className={`text-4xl sm:text-5xl mt-10 font-bold ${highlight}`}>
-            Our Premium <span className={textColor}>Services</span>
+            Explore Our Expert <span className={textColor}>Financial Services</span>
           </h2>
-          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto ${textColor}`}>
-            Money’s Matter offers a whole gamut of services to meet your{" "}
+          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto ${secTextColor}`}>
+            At Shri Nivesh, we offer trusted and tailored solutions for your{" "}
             <span className={highlight}>Savings</span>,{" "}
             <span className={highlight}>Investment</span>,{" "}
             <span className={highlight}>Insurance</span>, and{" "}
-            <span className={highlight}>Taxation</span> needs.
+            <span className={highlight}>Tax Planning</span> needs
+            — helping you secure and grow your wealth with confidence.
           </p>
         </div>
 

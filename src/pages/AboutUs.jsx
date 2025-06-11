@@ -113,6 +113,7 @@ const AboutUs = () => {
     : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]";
 
   const textColor = darkMode ? "text-white" : "text-black";
+  const secTextColor = darkMode ? "text-yellow-300" : "text-green-700";
   const highlight = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
   const cardGlass = darkMode
     ? "bg-gradient-to-br from-[#1a2a38]/40 to-[#0b1925]/20"
@@ -175,11 +176,20 @@ const AboutUs = () => {
                   Your Financial Success Is <span className={`font-bold ${highlight}`}>Our Priority</span>
                 </motion.h3>
                 <p className={`mb-4 text-sm sm:text-base leading-relaxed ${textColor}`}>
-                  Money's Matter came into existence in the year 2016 when the promoter having then an experience of over twenty five years realized that personal finance was not mere numbers, it had a human side of it too.
+                  At Shri Nivesh, we believe that financial planning is more than just numbers—it's about people, goals, and meaningful progress. Since 2017, we’ve been on a mission to help individuals and families make smarter financial decisions for a secure future.
                 </p>
                 <p className={`text-sm sm:text-base leading-relaxed ${textColor}`}>
-                  There are three domains of Personal Financial Planning: Life, what is commonly called Life Insurance; Health, what is commonly referred to as Health Insurance or Mediclaim; and Wealth, which is the most dynamic part of Personal Financial Planning.
+                  With over 8 years of combined experience, our founder recognized that true financial success comes from personalized guidance, not generic advice. That’s why we focus on understanding your life goals before creating a financial roadmap for you.
                 </p>
+                   <p className={`text-sm sm:text-base leading-relaxed ${textColor}`}>
+                  We specialize in three key areas of Personal Finance: <br/>
+                        ✔ Protection through Life Insurance,<br/>
+                        ✔ Health Security with Medical & Health Insurance, and<br/>
+                        ✔ Wealth Building via smart investment planning.
+                </p>
+                <p className={`text-sm sm:text-base leading-relaxed ${textColor}`}>
+                  At Shri Nivesh, your success isn’t just a goal—it’s our priority.
+                  </p>
               </div>
               <div className="md:w-1/2">
                 <motion.img
@@ -199,12 +209,19 @@ const AboutUs = () => {
         <div>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
             <h3 className={`text-4xl font-bold mb-6 text-center ${highlight}`}>Vision & Mission</h3>
+             <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor}  `}>Guiding You Towards a Financially Secure Tomorrow</h4>
             <div className="space-y-6 text-center text-sm sm:text-base leading-relaxed px-2 sm:px-10 lg:px-24">
               <p className={textColor}>
-                We at Money’s Matter understand that finance has a very human side. Everyone has dreams, goals, responsibilities, emotions and aspirations. Numbers alone don’t define one’s financial future. We aim to blend logic with emotion, strategy with empathy, and planning with personalization.
+                At Shri Nivesh, we recognize that personal finance is not just about numbers—it’s about people. Each individual carries unique dreams, responsibilities, and emotions that shape their financial journey. Our approach blends strategic financial planning with empathy and personalization, ensuring your financial goals are aligned with your life’s purpose.
               </p>
               <p className={textColor}>
-                Our mission is to empower individuals and families to make informed financial decisions, helping them lead lives of security, dignity, and fulfillment.
+                🔹 Our Vision is to be a trusted partner in your financial journey, helping you grow, protect, and preserve wealth across all stages of life.
+              </p>
+                 <p className={textColor}>
+                🔹 Our Mission is to educate and empower individuals and families to make informed financial decisions that lead to security, dignity, and long-term fulfillment.
+              </p>
+              <p className={textColor}>
+                With a focus on values, clarity, and personalized support, we aim to transform how people approach financial independence—with confidence and care.
               </p>
             </div>
           </div>
@@ -213,20 +230,34 @@ const AboutUs = () => {
         {/* Section 3: Founder Profile */}
         <div>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
-            <h3 className={`text-4xl font-bold mb-6 text-center ${highlight}`}>Our <span className={textColor}>Esteemed Founder</span></h3>
+            <h3 className={`text-4xl font-bold mb-6 text-center ${textColor} `}>Our <span className={highlight}>Leadership Philosophy</span></h3>
+            <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor} `}>Driven by Knowledge, Guided by Values
+
+</h4>
             <div className="flex flex-col md:flex-row items-center gap-10">
-              <div className="md:w-2/3 space-y-4 text-sm sm:text-base leading-relaxed">
+              <div className=" space-y-4 text-sm sm:text-base leading-relaxed">
                 <p className={textColor}>
-                  Mr Ashish Kumar Meher is someone who is known for his candid, honest and unbiased views on aspects related to Personal Finance. Academics being his forte, he has MBA and MPhil degrees, and to strengthen the behavioural side of financial planning he also posses a Doctorate in Consumer Behaviour.
+                  Behind Shri Nivesh is a strong foundation built on trust, experience, and deep understanding of personal finance. The leadership team is made up of financial experts with decades of experience in helping people plan, protect, and grow their wealth.
                 </p>
                 <p className={textColor}>
-                  Dr Anubandh has an experience and expertise of almost thirty three years in the personal financial domains ranging from Life Insurance, Health Insurance to New Age Financial Products like Mutual Funds, Portfolio Management Schemes, Alternate Investment Funds, Capital Gains Bonds, etc.
+                  With advanced qualifications in Finance, Consumer Behavior, and Investment Planning, we don’t just believe in numbers—we believe in people’s dreams. Every solution we offer comes from real insight, honest advice, and a genuine desire to help people create better financial futures.
                 </p>
                 <p className={textColor}>
-                  A voracious reader, a keen learner, a deep analyst, an excellent orator, a believer in the Divine, a non compromiser on values, ethics and principles are the traits which defines Dr Anubandh's personality!
+                  Over the years, we’ve guided individuals, families, and businesses in areas like:<br/>
+                  • Life Insurance & Health Insurance<br/>
+                  • Mutual Funds & SIPs<br/>
+                  • Portfolio Management & Tax-Efficient Investments
+                </p>
+                  <p className={textColor}>
+                  What sets us apart is not just our experience—but our commitment to values like honesty, simplicity, and personalization. We don’t sell products; we build relationships for life.
+                  </p>
+
+                    <p className={textColor}>
+                   “सपने पूरे करने का रास्ता कठिन नहीं होता, बस सही दिशा में पहला कदम बढ़ाना होता है।”<br/>
+(The path to fulfilling dreams is not difficult; it simply begins with the first right step.)
                 </p>
               </div>
-              <div className="md:w-1/3 text-center">
+              {/* <div className="md:w-1/3 text-center">
                 <img
                   src="/pics/founder.png"
                   alt="Dr Anubandh Rai"
@@ -235,7 +266,7 @@ const AboutUs = () => {
                 <h4 className={`mt-4 text-xl font-bold ${textColor}`}>
                   Mr. <span className={highlight}>Ashish Kumar Meher</span>
                 </h4>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
