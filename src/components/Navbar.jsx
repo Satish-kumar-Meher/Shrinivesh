@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import {
   FaSun,
@@ -24,7 +22,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.screenMode.mode);
   const navigate = useNavigate();
-  const location = useLocation(); // 👈 Get the current route path
+  const location = useLocation();
 
   const accentColor = darkMode ? "#10e2ea" : "#0e6371";
   const hoverBgColor = darkMode ? "#10e2ea" : "#0e6371";
@@ -43,13 +41,14 @@ const Navbar = () => {
     { name: "Contact", icon: <FaPhoneAlt />, link: "/contact" },
   ];
 
+  // ✅ Improved active logic for nested routes:
+  const isActive = (link) => {
+    return location.pathname === link || location.pathname.startsWith(link + '/');
+  };
+
   const handleLinkClick = (link) => {
     navigate(link);
     setMenuOpen(false);
-  };
-
-  const isActive = (link) => {
-    return location.pathname === link;
   };
 
   return (
@@ -217,6 +216,13 @@ export default Navbar;
 
 
 
+
+
+
+
+
+
+
 // import React, { useState } from "react";
 // import {
 //   FaSun,
@@ -234,14 +240,14 @@ export default Navbar;
 // import { motion } from "framer-motion";
 // import { useDispatch, useSelector } from "react-redux";
 // import { toggleScreenMode } from "../redux/modeSlice.js";
-// import { useNavigate } from "react-router";
+// import { useNavigate, useLocation } from "react-router-dom";
 
 // const Navbar = () => {
 //   const [menuOpen, setMenuOpen] = useState(false);
-//   const [activeLink, setActiveLink] = useState("Home");
 //   const dispatch = useDispatch();
 //   const darkMode = useSelector((state) => state.screenMode.mode);
 //   const navigate = useNavigate();
+//   const location = useLocation(); // 👈 Get the current route path
 
 //   const accentColor = darkMode ? "#10e2ea" : "#0e6371";
 //   const hoverBgColor = darkMode ? "#10e2ea" : "#0e6371";
@@ -260,10 +266,13 @@ export default Navbar;
 //     { name: "Contact", icon: <FaPhoneAlt />, link: "/contact" },
 //   ];
 
-//   const handleLinkClick = (name, link) => {
-//     setActiveLink(name);
+//   const handleLinkClick = (link) => {
 //     navigate(link);
-//     setMenuOpen(false); // Close mobile menu after click
+//     setMenuOpen(false);
+//   };
+
+//   const isActive = (link) => {
+//     return location.pathname === link;
 //   };
 
 //   return (
@@ -285,33 +294,31 @@ export default Navbar;
 //         {navItems.map((item) => (
 //           <a
 //             key={item.name}
-//             onClick={() => handleLinkClick(item.name, item.link)}
+//             onClick={() => handleLinkClick(item.link)}
 //             className={`flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${
-//               activeLink === item.name ? "scale-105" : ""
+//               isActive(item.link) ? "scale-105" : ""
 //             }`}
 //             style={{
-//               backgroundColor:
-//                 activeLink === item.name ? accentColor : "transparent",
-//               color:
-//                 activeLink === item.name
-//                   ? hoverTextColor
-//                   : darkMode
-//                   ? "#fff"
-//                   : "#111",
+//               backgroundColor: isActive(item.link) ? accentColor : "transparent",
+//               color: isActive(item.link)
+//                 ? hoverTextColor
+//                 : darkMode
+//                 ? "#fff"
+//                 : "#111",
 //             }}
 //             onMouseEnter={(e) => {
 //               e.target.style.backgroundColor = hoverBgColor;
 //               e.target.style.color = hoverTextColor;
 //             }}
 //             onMouseLeave={(e) => {
-//               e.target.style.backgroundColor =
-//                 activeLink === item.name ? accentColor : "transparent";
-//               e.target.style.color =
-//                 activeLink === item.name
-//                   ? hoverTextColor
-//                   : darkMode
-//                   ? "#fff"
-//                   : "#111";
+//               e.target.style.backgroundColor = isActive(item.link)
+//                 ? accentColor
+//                 : "transparent";
+//               e.target.style.color = isActive(item.link)
+//                 ? hoverTextColor
+//                 : darkMode
+//                 ? "#fff"
+//                 : "#111";
 //             }}
 //           >
 //             {item.icon} {item.name}
@@ -330,11 +337,7 @@ export default Navbar;
 //             animate={{ x: darkMode ? 24 : 0 }}
 //             transition={{ type: "spring", stiffness: 300, damping: 20 }}
 //           >
-//             {darkMode ? (
-//               <FaSun className="text-sm" />
-//             ) : (
-//               <FaMoon className="text-sm" />
-//             )}
+//             {darkMode ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
 //           </motion.div>
 //         </motion.button>
 
@@ -346,7 +349,7 @@ export default Navbar;
 //         </button>
 //       </div>
 
-//       {/* Mobile Menu Button */}
+//       {/* Mobile Nav Toggle */}
 //       <div className="md:hidden flex items-center gap-2 z-50">
 //         <motion.button
 //           onClick={() => dispatch(toggleScreenMode())}
@@ -360,27 +363,15 @@ export default Navbar;
 //             animate={{ x: darkMode ? 24 : 0 }}
 //             transition={{ type: "spring", stiffness: 300, damping: 20 }}
 //           >
-//             {darkMode ? (
-//               <FaSun className="text-sm" />
-//             ) : (
-//               <FaMoon className="text-sm" />
-//             )}
+//             {darkMode ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
 //           </motion.div>
 //         </motion.button>
 
 //         <button onClick={() => setMenuOpen(!menuOpen)}>
 //           {menuOpen ? (
-//             <FaTimes
-//               className={`text-2xl ${
-//                 darkMode ? "text-white" : "text-black"
-//               }`}
-//             />
+//             <FaTimes className={`text-2xl ${darkMode ? "text-white" : "text-black"}`} />
 //           ) : (
-//             <FaBars
-//               className={`text-2xl ${
-//                 darkMode ? "text-white" : "text-black"
-//               }`}
-//             />
+//             <FaBars className={`text-2xl ${darkMode ? "text-white" : "text-black"}`} />
 //           )}
 //         </button>
 //       </div>
@@ -399,31 +390,29 @@ export default Navbar;
 //           {navItems.map((item) => (
 //             <a
 //               key={item.name}
-//               onClick={() => handleLinkClick(item.name, item.link)}
+//               onClick={() => handleLinkClick(item.link)}
 //               className="flex items-center gap-2 px-3 py-2 rounded-md transition hover:scale-105"
 //               style={{
-//                 backgroundColor:
-//                   activeLink === item.name ? accentColor : "transparent",
-//                 color:
-//                   activeLink === item.name
-//                     ? hoverTextColor
-//                     : darkMode
-//                     ? "#fff"
-//                     : "#111",
+//                 backgroundColor: isActive(item.link) ? accentColor : "transparent",
+//                 color: isActive(item.link)
+//                   ? hoverTextColor
+//                   : darkMode
+//                   ? "#fff"
+//                   : "#111",
 //               }}
 //               onMouseEnter={(e) => {
 //                 e.target.style.backgroundColor = hoverBgColor;
 //                 e.target.style.color = hoverTextColor;
 //               }}
 //               onMouseLeave={(e) => {
-//                 e.target.style.backgroundColor =
-//                   activeLink === item.name ? accentColor : "transparent";
-//                 e.target.style.color =
-//                   activeLink === item.name
-//                     ? hoverTextColor
-//                     : darkMode
-//                     ? "#fff"
-//                     : "#111";
+//                 e.target.style.backgroundColor = isActive(item.link)
+//                   ? accentColor
+//                   : "transparent";
+//                 e.target.style.color = isActive(item.link)
+//                   ? hoverTextColor
+//                   : darkMode
+//                   ? "#fff"
+//                   : "#111";
 //               }}
 //             >
 //               {item.icon} {item.name}
@@ -443,8 +432,6 @@ export default Navbar;
 // };
 
 // export default Navbar;
-
-
 
 
 
