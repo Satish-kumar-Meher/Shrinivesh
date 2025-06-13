@@ -9,6 +9,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import AllCalculators from './pages/AllCalculators';
 import Goals from './pages/Goals';
+import More from './pages/More';
+import MutualFundsFAQ from './components/more/MutualFundsFAQ';
 
 
 
@@ -42,6 +44,16 @@ const router = createBrowserRouter([
         path: "/goals",
         element: <Goals/>,
       },
+      {
+        path: "/more",
+        element: <More/>,
+            
+      },
+      {
+       path: "/mf_faqs",
+       element: <MutualFundsFAQ/>,
+            },
+      
     ],
   },
 ])

@@ -121,7 +121,8 @@ const Home = () => {
           className="max-w-xl w-full"
         >
           <motion.h1
-            className={`text-4xl md:text-5xl font-extrabold leading-tight mb-6 ${
+            className={`text-4xl  md:text-5xl font-extrabold leading-tight mb-4 md:mb-6 
+              mt-[-35px] sm:mt-0 ${
               darkMode ? 'text-white' : 'text-gray-800'
             }`}
             variants={textVariant}
@@ -213,7 +214,7 @@ const Home = () => {
     <SecureSection/>
     <TopMutualFunds/>
     <InvestmentReturns/>
-     <AssetAllocation/>
+    <AssetAllocation/>
     <TestimonialSlider/>
     <LatestBlog/>
     <LatestNews/>
