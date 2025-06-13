@@ -27,7 +27,7 @@ const sections = [
     name: "NRI Corner FAQ",
     description: "Help and guidance tailored for NRIs investing in India.",
     icon: <Users size={32} />,
-    route: "/nri-faq",
+    route: "/nri_faqs",
   },
   {
     name: "Financial Planning",

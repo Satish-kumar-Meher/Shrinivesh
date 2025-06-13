@@ -11,6 +11,7 @@ import AllCalculators from './pages/AllCalculators';
 import Goals from './pages/Goals';
 import More from './pages/More';
 import MutualFundsFAQ from './components/more/MutualFundsFAQ';
+import NriFaqs from './components/more/NRIFaqs';
 
 
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
        path: "/mf_faqs",
        element: <MutualFundsFAQ/>,
+            },
+            {
+       path: "/nri_faqs",
+       element: <NriFaqs/>,
             },
       
     ],
