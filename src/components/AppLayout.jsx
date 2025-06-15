@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import ScrollToTop from './ScrollToTop';
 
 
 function AppLayout() {
@@ -41,6 +42,7 @@ window.addEventListener("mouseup", () => {
   transition={{ type: "spring", stiffness: 100 }}
   id="cursor"
 />
+<ScrollToTop/>
 <Outlet/>
 <Footer/>
 </>

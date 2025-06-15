@@ -14,6 +14,7 @@ import LatestNews from '../components/Home/LatestNews';
 import AMCMarquee from '../components/Home/AMCMarquee';
 import AssetAllocation from '../components/Home/AssetAllocation';
 import { Bubbles } from '../utils/Bubble';
+import { useNavigate } from 'react-router';
 
 const slides = [
   {
@@ -23,6 +24,7 @@ const slides = [
       "The best time to plan for your retirement is as early as you can. Plan early to build up a corpus large enough to pay for inflation adjusted expenses in your retirement.",
     buttonText: "Plan Retirement",
     image: "https://www.moneysmatter.com/images/banners/home-banner-1.png",
+     links:"/goals/retirement",
   },
   {
     title: "Plan now to give wings",
@@ -31,6 +33,7 @@ const slides = [
       "Higher education prices are rising in India. Mutual fund investments can help you build a corpus large enough to match your child's aspirations.Start early to take full advantage of compounding.",
     buttonText: "Plan Child's Education",
     image: "https://www.moneysmatter.com/images/banners/home-banner.png",
+     links:"/goals/child_education",
   },
   {
     title: "The best gift you can give",
@@ -39,6 +42,7 @@ const slides = [
       "A wedding is special. When we are speaking of your child's wedding, you would not want to let lack of funds be a reason for their special day.being less than enchanting. Let us help you with investment suggestions that can help you achieve their dreams.",
     buttonText: "Plan Child's Wedding",
     image: "https://www.moneysmatter.com/images/banners/home-banner-3.png",
+     links:"/goals/child_wedding",
   },
   {
     title: "Invest regularly and grow",
@@ -47,6 +51,7 @@ const slides = [
       "SIP (Systematic Investment Plan) encourages consistent, small investments over time, helping build wealth steadily. It offers a disciplined approach to achieve long-term financial security and growth.",
     buttonText: "Plan SIP",
     image: "https://www.moneysmatter.com/images/banners/home-banner-4.png",
+     links:"/goals/plan_sip",
   },
   {
     title: "Create wealth steadily through smart investments",
@@ -55,6 +60,7 @@ const slides = [
       "Wealth creation involves making smart, consistent investments over time. By focusing on long-term goals and strategic planning, individuals can build financial security and prosperity.",
     buttonText: "Plan Wealth Creation",
     image: "https://www.moneysmatter.com/images/banners/home-banner-5.png",
+     links:"/goals/wealth_creation",
   },
   {
     title: "Protect your loved ones'",
@@ -63,6 +69,7 @@ const slides = [
       "Life insurance ensures financial security for your loved ones in case of unforeseen events. It provides peace of mind, protecting their future and helping maintain stability.",
     buttonText: "Plan Life Insurance",
     image: "https://www.moneysmatter.com/images/banners/home-banner-6.png",
+     links:"/goals/life_insurance",
   },
   {
     title: "Secure your health and future with reliable",
@@ -71,6 +78,7 @@ const slides = [
       "Health insurance provides essential coverage for medical expenses, ensuring you and your family are protected during illness or emergencies. It offers financial security and peace of mind.",
     buttonText: "Plan Health Insurance",
     image: "https://www.moneysmatter.com/images/banners/home-banner-7.png",
+     links:"/goals/health_insurance",
   },
 ];
 
@@ -90,6 +98,7 @@ const textVariant = {
 const Home = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -161,6 +170,7 @@ const Home = () => {
     }`}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
+    onClick={() => navigate(slides[current].links)}
   >
     {slides[current].buttonText}
   </motion.button>

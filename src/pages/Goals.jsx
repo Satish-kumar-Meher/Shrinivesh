@@ -136,6 +136,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Bubbles } from "../utils/Bubble";
+import { useNavigate } from "react-router";
 
 const goals = [
   {
@@ -143,42 +144,49 @@ const goals = [
     image: "https://www.moneysmatter.com/images/banners/home-banner-4.png",
     description:
       "Plan and save for your perfect home with smart investments. Ensure a roof over your head that reflects your dreams.",
+    links:"/goals/dream_home",
   },
   {
     title: "Wealth Creation",
     image: "https://www.moneysmatter.com/images/banners/home-banner-5.png",
     description:
       "Build long-term wealth through disciplined investments. Grow your money and secure financial freedom.",
+      links:"/goals/wealth_creation",
   },
   {
     title: "Retirement",
     image: "https://www.moneysmatter.com/images/banners/home-banner-1.png",
     description:
       "Secure a peaceful and financially free retirement life. Let your golden years be truly golden.",
+      links:"/goals/retirement",
   },
   {
     title: "Child's Education",
     image: "https://www.moneysmatter.com/images/banners/home-banner.png",
     description:
       "Invest early for your child's bright educational future. Support their dreams with the right planning.",
+      links:"/goals/child_education",
   },
   {
     title: "Child's Wedding",
     image: "https://www.moneysmatter.com/images/banners/home-banner-3.png",
     description:
       "Be financially prepared for your child’s big celebration. Make it memorable without financial stress.",
+      links:"/goals/child_wedding",
   },
   {
     title: "Emergency",
     image: "https://www.moneysmatter.com/images/banners/home-banner-7.png",
     description:
       "Create an emergency fund for life’s unexpected challenges. Stay ready for any surprise expenses.",
+      links:"/goals/emergency",
   },
 ];
 
 const Goals = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
   const [activeIndex, setActiveIndex] = useState(null);
+  const navigate = useNavigate()
 
   const bgGradient = darkMode
     ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
@@ -268,6 +276,7 @@ const Goals = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
                     className={`px-5 py-2 rounded-full font-semibold ${buttonStyle} hover:scale-105 transition-transform`}
+                    onClick={() => navigate(goal.links)}
                   >
                     Set Goal
                   </motion.button>
@@ -295,32 +304,32 @@ export default Goals;
 // const goals = [
 //   {
 //     name: "Dream Home",
-//     image: "/goals/dream-home.jpg",
+//     image: "/dream-home.jpg",
 //     description: "Plan and achieve your dream home through smart investments.",
 //   },
 //   {
 //     name: "Wealth Creation",
-//     image: "/goals/wealth-creation.jpg",
+//     image: "/wealth-creation.jpg",
 //     description: "Grow your wealth strategically over time.",
 //   },
 //   {
 //     name: "Retirement",
-//     image: "/goals/retirement.jpg",
+//     image: "/retirement.jpg",
 //     description: "Secure a peaceful and financially independent retirement.",
 //   },
 //   {
 //     name: "Child's Education",
-//     image: "/goals/education.jpg",
+//     image: "/education.jpg",
 //     description: "Ensure quality education for your children.",
 //   },
 //   {
 //     name: "Child's Wedding",
-//     image: "/goals/wedding.jpg",
+//     image: "/wedding.jpg",
 //     description: "Plan financially for your child's special day.",
 //   },
 //   {
 //     name: "Emergency",
-//     image: "/goals/emergency.jpg",
+//     image: "/emergency.jpg",
 //     description: "Be prepared for unexpected life emergencies.",
 //   },
 // ];
@@ -432,32 +441,32 @@ export default Goals;
 // const goals = [
 //   {
 //     title: "Dream Home",
-//     image: "/goals/dream-home.jpg",
+//     image: "/dream-home.jpg",
 //     description: "Plan and save for your perfect home with smart investments.",
 //   },
 //   {
 //     title: "Wealth Creation",
-//     image: "/goals/wealth-creation.jpg",
+//     image: "/wealth-creation.jpg",
 //     description: "Build long-term wealth through disciplined investments.",
 //   },
 //   {
 //     title: "Retirement",
-//     image: "/goals/retirement.jpg",
+//     image: "/retirement.jpg",
 //     description: "Secure a peaceful and financially free retirement life.",
 //   },
 //   {
 //     title: "Child's Education",
-//     image: "/goals/education.jpg",
+//     image: "/education.jpg",
 //     description: "Invest early for your child's bright educational future.",
 //   },
 //   {
 //     title: "Child's Wedding",
-//     image: "/goals/wedding.jpg",
+//     image: "/wedding.jpg",
 //     description: "Be financially prepared for your child’s big celebration.",
 //   },
 //   {
 //     title: "Emergency",
-//     image: "/goals/emergency.jpg",
+//     image: "/emergency.jpg",
 //     description: "Create an emergency fund for life’s unexpected challenges.",
 //   },
 // ];
