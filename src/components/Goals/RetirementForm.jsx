@@ -57,7 +57,7 @@ const RetirementForm = () => {
 
   return (
     <section
-      className={`relative mt-5 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
+      className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
     >
       <Bubbles darkMode={darkMode} />
 

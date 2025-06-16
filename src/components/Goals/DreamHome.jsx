@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { ChevronDown, Check } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
+
+const riskOptions = [
+  "Conservative",
+  "Moderate",
+  "Aggressive",
+  "Moderately Conservative",
+  "Moderately Aggressive",
+  "Check Your Profile",
+];
 
 const DreamHomeForm = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -11,10 +21,20 @@ const DreamHomeForm = () => {
     houseCost: "",
     inflation: "",
     goalName: "",
+    risk: "Conservative",
+    showDropdown: false,
   });
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const toggleDropdown = () => {
+    setFormData((prev) => ({ ...prev, showDropdown: !prev.showDropdown }));
+  };
+
+  const selectRisk = (risk) => {
+    setFormData((prev) => ({ ...prev, risk, showDropdown: false }));
   };
 
   const bg = darkMode
@@ -33,7 +53,7 @@ const DreamHomeForm = () => {
 
   return (
     <section
-      className={`relative min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
+      className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
     >
       <Bubbles darkMode={darkMode} />
 
@@ -95,9 +115,39 @@ const DreamHomeForm = () => {
             />
           </div>
 
-          {/* Risk Level (fixed value as in your design) */}
-          <div className="flex flex-col gap-2">
-            <p>You can take <span className={highlight}>Conservative</span> risk with your investments.</p>
+          {/* Risk Dropdown */}
+          <div className="flex flex-col gap-2 relative">
+            <p>You can take</p>
+            <button
+              onClick={toggleDropdown}
+              className={`w-full sm:w-64 px-4 py-2 rounded-full border focus:outline-none ${highlight} border-current flex items-center justify-between`}
+            >
+              {formData.risk}
+              <ChevronDown size={16} />
+            </button>
+
+            {formData.showDropdown && (
+              <motion.ul
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className={`absolute z-20 top-14 w-full sm:w-64 bg-white/30 dark:bg-[#0b1925]/80 rounded-lg shadow-xl backdrop-blur-md border border-gray-300 dark:border-[#10e2ea]/30 ${textColor}`}
+              >
+                {riskOptions.map((option) => (
+                  <li
+                    key={option}
+                    onClick={() => selectRisk(option)}
+                    className="px-4 py-2 cursor-pointer hover:bg-white/20 flex justify-between items-center"
+                  >
+                    {option}
+                    {formData.risk === option && (
+                      <Check size={16} className="text-green-500" />
+                    )}
+                  </li>
+                ))}
+              </motion.ul>
+            )}
+            <p>risk with your investments.</p>
           </div>
 
           {/* Submit Button */}
