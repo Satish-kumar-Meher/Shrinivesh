@@ -71,9 +71,7 @@ const outerHoverGlow = darkMode
             Priority
           </motion.h2>
           <p className="text-base leading-relaxed mb-6">
-            Money's Matter came into existence in the year 2016 when the promoter,
-            having then an experience of over twenty five years, realized that
-            personal finance was not mere numbers, ...
+           At Shri Nivesh, we believe that financial planning is more than just numbers—it's about people, goals, and meaningful progress. Since 2017, we’ve been on a mission to help individuals and families make smarter financial decisions for a secure future.....
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

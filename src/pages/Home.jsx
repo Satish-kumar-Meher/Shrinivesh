@@ -18,65 +18,65 @@ import { useNavigate } from 'react-router';
 
 const slides = [
   {
-    title: "The Best Is Yet To Come",
-    highlight: "If You Plan For It Now.",
+    title: "Secure Your Future.",
+    highlight: "Live Your Dreams.",
     description:
-      "The best time to plan for your retirement is as early as you can. Plan early to build up a corpus large enough to pay for inflation adjusted expenses in your retirement.",
+      "The best time to plan your retirement was yesterday. The next best time is now.At Shri Nivesh, we help you create a custom retirement plan that ensures you don’t just retire — you retire rich, stress-free, and independent.",
     buttonText: "Plan Retirement",
     image: "https://www.moneysmatter.com/images/banners/home-banner-1.png",
      links:"/goals/retirement",
   },
   {
-    title: "Plan now to give wings",
-    highlight: "to their aspirations.",
+    title: "Start early to fuel their",
+    highlight: "dreams with confidence.",
     description:
-      "Higher education prices are rising in India. Mutual fund investments can help you build a corpus large enough to match your child's aspirations.Start early to take full advantage of compounding.",
+      "Education costs are rising fast. Smart mutual fund investments can help you build a solid education fund for your child. Start now and let compounding do the heavy lifting.",
     buttonText: "Plan Child's Education",
     image: "https://www.moneysmatter.com/images/banners/home-banner.png",
      links:"/goals/child_education",
   },
   {
-    title: "The best gift you can give",
-    highlight: "them is their dream.",
+    title: "The most precious gift?",
+    highlight: "Their dream wedding.",
     description:
-      "A wedding is special. When we are speaking of your child's wedding, you would not want to let lack of funds be a reason for their special day.being less than enchanting. Let us help you with investment suggestions that can help you achieve their dreams.",
+      "Your child’s wedding is a milestone moment. Don’t let lack of funds limit their big day. With smart financial planning, you can turn their dreams into reality.",
     buttonText: "Plan Child's Wedding",
     image: "https://www.moneysmatter.com/images/banners/home-banner-3.png",
      links:"/goals/child_wedding",
   },
   {
-    title: "Invest regularly and grow",
-    highlight: "steadily with SIP for a secure future.",
+    title: "Start Small. Grow Big.",
+    highlight: "Secure Your Future with SIP.",
     description:
-      "SIP (Systematic Investment Plan) encourages consistent, small investments over time, helping build wealth steadily. It offers a disciplined approach to achieve long-term financial security and growth.",
+      "A SIP (Systematic Investment Plan) lets you invest small amounts regularly — making wealth creation simple, steady, and stress-free.✨ Build long-term wealth✨ Easy to start, easy to manage✨ Perfect for financial freedom",
     buttonText: "Plan SIP",
     image: "https://www.moneysmatter.com/images/banners/home-banner-4.png",
      links:"/goals/plan_sip",
   },
   {
-    title: "Create wealth steadily through smart investments",
-    highlight: "and long-term financial planning.",
+    title: "Build lasting wealth through smart investing",
+    highlight: "and consistent planning.",
     description:
-      "Wealth creation involves making smart, consistent investments over time. By focusing on long-term goals and strategic planning, individuals can build financial security and prosperity.",
+      "Wealth doesn't happen by chance—it’s built with patience, purpose, and the power of compounding. Start investing regularly in mutual funds and watch your financial goals come closer, one SIP at a time.",
     buttonText: "Plan Wealth Creation",
     image: "https://www.moneysmatter.com/images/banners/home-banner-5.png",
      links:"/goals/wealth_creation",
   },
   {
-    title: "Protect your loved ones'",
-    highlight: "future with life insurance today.",
+    title: "Secure your family's future",
+    highlight: " with trusted life insurance.",
     description:
-      "Life insurance ensures financial security for your loved ones in case of unforeseen events. It provides peace of mind, protecting their future and helping maintain stability.",
+      "Life is unpredictable—but your family's financial future shouldn't be. A smart life insurance plan offers peace of mind, long-term stability, and protection when it matters the most. Shield your loved ones today from life’s uncertainties with future-ready coverage.",
     buttonText: "Plan Life Insurance",
     image: "https://www.moneysmatter.com/images/banners/home-banner-6.png",
      links:"/goals/life_insurance",
   },
   {
-    title: "Secure your health and future with reliable",
-    highlight: "health insurance coverage.",
+    title: "Protect your health and savings",
+    highlight: "with a trusted health insurance plan.",
     description:
-      "Health insurance provides essential coverage for medical expenses, ensuring you and your family are protected during illness or emergencies. It offers financial security and peace of mind.",
-    buttonText: "Plan Health Insurance",
+      "Rising medical costs shouldn’t be a burden. With the right health insurance, you get reliable coverage, cashless treatment, and peace of mind for you and your family. Stay protected against unexpected health emergencies—secure your future today.",
+      buttonText: "Plan Health Insurance",
     image: "https://www.moneysmatter.com/images/banners/home-banner-7.png",
      links:"/goals/health_insurance",
   },
@@ -107,6 +107,15 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const btnGradient = darkMode
+    ? "bg-gradient-to-r from-[#10e2ea] to-[#045b68] text-white"
+    : "bg-gradient-to-r from-[#0e6371] to-[#84e9f0] text-white";
+
+   
+  //  const btnGradient =   darkMode
+  //       ? 'bg-[#10e2ea] hover:bg-[#efe043] text-black shadow-cyan-400/20'
+  //       : 'bg-[#0e6371] hover:bg-[#a79811] text-white shadow-cyan-600/20'
+  
 
   const nextSlide = () => setCurrent((current + 1) % slides.length);
   const prevSlide = () => setCurrent((current - 1 + slides.length) % slides.length);
@@ -163,11 +172,7 @@ const Home = () => {
 
           <div className="w-full flex justify-center md:justify-start mt-4">
   <motion.button
-    className={`px-6 py-2 rounded-2xl shadow-md transition ${
-      darkMode
-        ? 'bg-[#10e2ea] hover:bg-[#efe043] text-black shadow-cyan-400/20'
-        : 'bg-[#0e6371] hover:bg-[#a79811] text-white shadow-cyan-600/20'
-    }`}
+    className={`px-6 py-2 rounded-2xl shadow-md transition ${btnGradient}`}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     onClick={() => navigate(slides[current].links)}

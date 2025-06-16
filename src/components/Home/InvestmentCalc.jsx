@@ -53,6 +53,9 @@ export default function InvestmentReturns() {
   const btnGlass = `rounded-full p-2 ${glassBg} ${innerGlow} border ${darkMode ? "border-[#10e2ea]/30" : "border-[#0e6371]/20"} transition hover:scale-105`;
 
   const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
+  const btnGradient = darkMode
+    ? "bg-gradient-to-r from-[#10e2ea] to-[#045b68]"
+    : "bg-gradient-to-r from-[#0e6371] to-[#84e9f0]";
 
 
   return (
@@ -136,7 +139,7 @@ export default function InvestmentReturns() {
                     : `₹ ${(returns / 100000).toFixed(2)}L`}
                 </p>
                 <div className="mt-4 flex justify-center">
-                  <span className="px-4 py-1 bg-emerald-800 text-white text-sm rounded-full shadow">
+                  <span className={`px-4 py-1 ${btnGradient} text-white text-sm rounded-full shadow`}>
                     @{inv.rate}% Return
                   </span>
                 </div>

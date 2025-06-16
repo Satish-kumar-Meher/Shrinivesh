@@ -61,10 +61,10 @@ const glassBg = darkMode
       </h4>
       <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
         {label === "Customers"
-          ? "Investing with excellence, trust, and seamless mutual fund distribution."
+          ? "Trusted by Hundreds. Recommended by All.Delivering seamless mutual fund services with trust, care, and results that speak for themselves."
           : label === "Families"
-          ? "Growing with confidence, trust, and seamless mutual fund distribution."
-          : "With consistency, reliability, and seamless mutual fund distribution."}
+          ? "Building Generational Wealth, One Family at a Time.Helping Indian families grow financially strong with smart, reliable mutual fund solutions."
+          : "Every Client. Every Goal. Delivered.Proven results with a flawless track record in mutual fund distribution and wealth creation."}
       </p>
     </motion.div>
   );
@@ -92,17 +92,18 @@ const CounterSection = () => {
           Who We Are
         </h3>
         <h2 className={`text-3xl ${darkMode ? "text-[#10e2ea]" : "text-[#0e6371]"}  sm:text-4xl font-extrabold mb-6`}>
-          Working To Build A Better Wealth Planning
+          Crafting Smart Wealth Plans with a Human Touch
         </h2>
         <p className="text-base mb-12 max-w-2xl">
-          Money's Matter came into existence in the year 2016 when the promoter having then an
-          experience of over twenty five years realized that personal finance was not mere numbers,
-          it had a human side of it too.
+          Shri Nivesh was founded in 2024 with a clear belief — personal finance isn’t just about numbers, it's about people. Backed by over 8 years of hands-on experience, our founder realized that true wealth planning goes beyond spreadsheets. It’s about trust, care, and understanding your life goals.
+        </p>
+          <p className="text-base mt-[-25px] mb-12 max-w-2xl">
+          At Shri Nivesh, we combine expert advice with empathy to help individuals and families build financial freedom, one smart decision at a time.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-          <CounterCard end={500} label="Customers" darkMode={darkMode} delay={0.1} />
-          <CounterCard end={300} label="Families" darkMode={darkMode} delay={0.3} />
-          <CounterCard end={100} label="Success Rate" darkMode={darkMode} delay={0.5} />
+          <CounterCard end={500} label="Happy Clients" darkMode={darkMode} delay={0.1} />
+          <CounterCard end={300} label="Families Empowered" darkMode={darkMode} delay={0.3} />
+          <CounterCard end={100} label="Success Stories" darkMode={darkMode} delay={0.5} />
         </div>
       </div>
     </section>
