@@ -60,9 +60,9 @@ const glassBg = darkMode
         {label}
       </h4>
       <p className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-        {label === "Customers"
+        {label === "Happy Clients"
           ? "Trusted by Hundreds. Recommended by All.Delivering seamless mutual fund services with trust, care, and results that speak for themselves."
-          : label === "Families"
+          : label === "Families Empowered"
           ? "Building Generational Wealth, One Family at a Time.Helping Indian families grow financially strong with smart, reliable mutual fund solutions."
           : "Every Client. Every Goal. Delivered.Proven results with a flawless track record in mutual fund distribution and wealth creation."}
       </p>

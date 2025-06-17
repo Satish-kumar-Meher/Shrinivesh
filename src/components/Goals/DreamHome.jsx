@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { ChevronDown, Check } from "lucide-react";
@@ -25,6 +25,8 @@ const DreamHomeForm = () => {
     showDropdown: false,
   });
 
+  const dropdownRef = useRef(null);
+
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
@@ -36,6 +38,16 @@ const DreamHomeForm = () => {
   const selectRisk = (risk) => {
     setFormData((prev) => ({ ...prev, risk, showDropdown: false }));
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setFormData((prev) => ({ ...prev, showDropdown: false }));
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const bg = darkMode
     ? "from-[#0e1525] to-[#081824]"
@@ -105,7 +117,6 @@ const DreamHomeForm = () => {
               placeholder="Inflation %"
             />
             <p>% and You would like to name this goal as</p>
-
             <input
               type="text"
               value={formData.goalName}
@@ -118,36 +129,50 @@ const DreamHomeForm = () => {
           {/* Risk Dropdown */}
           <div className="flex flex-col gap-2 relative">
             <p>You can take</p>
-            <button
-              onClick={toggleDropdown}
-              className={`w-full sm:w-64 px-4 py-2 rounded-full border focus:outline-none ${highlight} border-current flex items-center justify-between`}
-            >
-              {formData.risk}
-              <ChevronDown size={16} />
-            </button>
-
-            {formData.showDropdown && (
-              <motion.ul
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className={`absolute z-20 top-14 w-full sm:w-64 bg-white/30 dark:bg-[#0b1925]/80 rounded-lg shadow-xl backdrop-blur-md border border-gray-300 dark:border-[#10e2ea]/30 ${textColor}`}
+            <div ref={dropdownRef} className="relative w-full sm:w-64">
+              <button
+                onClick={toggleDropdown}
+                className={`w-full px-4 py-2 rounded-full border focus:outline-none flex items-center justify-between 
+                ${
+                  darkMode
+                    ? "bg-white/5 border-[#10e2ea]/40 text-[#10e2ea]"
+                    : "bg-white/60 border-[#0e6371]/30 text-[#0e6371]"
+                }`}
               >
-                {riskOptions.map((option) => (
-                  <li
-                    key={option}
-                    onClick={() => selectRisk(option)}
-                    className="px-4 py-2 cursor-pointer hover:bg-white/20 flex justify-between items-center"
-                  >
-                    {option}
-                    {formData.risk === option && (
-                      <Check size={16} className="text-green-500" />
-                    )}
-                  </li>
-                ))}
-              </motion.ul>
-            )}
-            <p>risk with your investments.</p>
+                {formData.risk}
+                <ChevronDown size={16} />
+              </button>
+
+              {formData.showDropdown && (
+                <motion.ul
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.25 }}
+                  className={`absolute z-30 mt-2 top-full left-0 w-full rounded-xl shadow-lg backdrop-blur-md ${
+                    darkMode
+                      ? "bg-[#0f2a37]/80 border border-[#10e2ea]/20 text-white"
+                      : "bg-white/90 border border-[#0e6371]/20 text-black"
+                  }`}
+                >
+                  {riskOptions.map((option) => (
+                    <li
+                      key={option}
+                      onClick={() => selectRisk(option)}
+                      className={`px-4 py-3 cursor-pointer flex justify-between items-center hover:bg-white/10 ${
+                        formData.risk === option ? "font-semibold" : ""
+                      }`}
+                    >
+                      {option}
+                      {formData.risk === option && (
+                        <Check size={16} className="text-green-400" />
+                      )}
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </div>
+            <p className="mt-1">risk with your investments.</p>
           </div>
 
           {/* Submit Button */}
