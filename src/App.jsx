@@ -143,6 +143,7 @@ import ChildEducationForm from './components/Goals/ChildEducation';
 import WealthCreationForm from './components/Goals/WealthCreation';
 import EmergencyGoalForm from './components/Goals/EmergencyForm';
 import DreamHomeForm from './components/Goals/DreamHome';
+import MonthlySIPCalculator from './components/AllCalculators/SIPCalculator';
 
 const router = createBrowserRouter([
   {
@@ -154,7 +155,9 @@ const router = createBrowserRouter([
       { path: "/about", element: <AboutUs /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
+
       { path: "/calculators", element: <AllCalculators /> },
+      { path: "/calculators/sip_calculator", element: <MonthlySIPCalculator /> },
 
       {
         path: "/goals",

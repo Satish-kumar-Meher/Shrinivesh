@@ -2,97 +2,113 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Bubbles } from "../utils/Bubble";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const calculatorDetails = [
   {
     name: "SIP Return Calculator",
     emoji: "🧮",
     description:
-      "Curious how much your monthly SIP can grow in 10, 20, or 30 years? Use our SIP Return Calculator to get instant and accurate estimates. Perfect for long-term mutual fund investors.➡ Try now – it's fast, free, and beginner-friendly!"
+      "Curious how much your monthly SIP can grow in 10, 20, or 30 years? Use our SIP Return Calculator to get instant and accurate estimates. Perfect for long-term mutual fund investors.➡ Try now – it's fast, free, and beginner-friendly!",
+    link : "/calculators/sip_calculator"  
   },
   {
     name: "Become A Crorepati",
     emoji: "💰",
     description:
       "Dreaming of ₹1 Crore? Know exactly how much you need to invest monthly and for how long. Our Crorepati SIP Calculator gives you a clear path to 1 crore wealth goal.➡ Simple steps to your first crore.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "EMI Calculator",
     emoji: "🏠",
     description:
       "Buying a home or car? Calculate your monthly EMI in seconds. Enter loan amount, interest rate, and tenure to get your monthly payment instantly.➡ Use our EMI Calculator before taking any loan.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Retirement Planning Calculator",
     emoji: "👴",
     description:
       "Not sure how much to save for retirement? Use our calculator to know the exact monthly investment needed to live worry-free post-retirement.➡ Plan today, enjoy tomorrow.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Asset Allocation Calculator",
     emoji: "📊",
     description:
       "Confused between equity, debt, and gold? Our Asset Allocation tool helps you distribute your money smartly based on age and risk profile.➡ Smart investing starts with smart allocation.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "PPF Calculator",
     emoji: "🪙",
     description:
       "Check how much your PPF account will grow over time. Get a clear idea of interest earned, maturity amount, and tax-free returns.➡ Great for conservative, long-term savers.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "EPF Calculator",
     emoji: "👷",
     description:
       "Get a complete breakdown of your Employee Provident Fund (EPF) savings and employer contributions.➡ Helpful for salaried professionals planning future expenses.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Goal Setting Calculator",
     emoji: "🎯",
     description:
       "Have a dream? Whether it's a car, home, vacation, or your child’s future — our Goal Setting Calculator helps you plan the exact amount and investment needed to reach it.➡ Set it. Plan it. Achieve it.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Composite Financial Goal Calculator",
     emoji: "🥅",
     description:
       "Don’t juggle multiple goals. Plan them all in one go — child’s education, retirement, house, etc. This tool gives you a single view for multiple goals with timelines and SIP amounts.➡ One planner. Many dreams.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Children Education Planner",
     emoji: "🎓",
     description:
       "Plan how much to invest now to afford your child’s school, college, or higher studies — in India or abroad. Factor in inflation and course costs with ease.➡ Secure their future, one SIP at a time.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Networth Calculator",
     emoji: "🧮",
     description:
       "Add up your assets. Subtract your liabilities. Our Net Worth Calculator shows your actual financial standing instantly.➡ Step 1 to wealth: Know your worth.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Compounding Calculator",
     emoji: "🔁",
     description:
       "See how your money grows when it compounds over years. Perfect for investors who want to understand how time can make wealth grow exponentially.➡ Albert Einstein called it the 8th wonder — try it now.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Spending Less Calculator",
     emoji: "💳",
     description:
       "Thinking of cutting down on your OTT, online shopping, or daily coffee? Find out how those small savings can add up to huge investments over time.➡ Spend smart. Invest smarter.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "Human Life Value Calculator",
     emoji: "👥",
     description:
       "This tool helps you calculate the financial value of your life for insurance planning. Know how much your family would need in your absence.➡ Insure the life you’ve built.",
+    link : "/calculators/sip_calculator"
   },
   {
     name: "SIP Step Up Calculator",
     emoji: "📈",
     description:
       "Planning to increase your SIP every year? This calculator helps you see the impact of SIP top-ups on your total wealth.➡ Perfect for salaried individuals with rising incomes.",
+    link : "/calculators/sip_calculator"
   },
 ];
 
@@ -116,6 +132,7 @@ const logoMap = {
 
 const AllCalculators = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
+  const navigate = useNavigate()
 
   const bgGradient = darkMode
     ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
@@ -157,7 +174,7 @@ const AllCalculators = () => {
       </div>
 
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        {calculatorDetails.map(({ name, description, emoji }, index) => (
+        {calculatorDetails.map(({ name, description, emoji,link }, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -166,6 +183,7 @@ const AllCalculators = () => {
             className={`flex flex-col justify-between h-full p-6 rounded-2xl border ${
               darkMode ? "border-[#10e2ea]" : "border-[#0e6371]"
             } cursor-pointer backdrop-blur-xl ${cardGlass} ${glow} transition duration-300 transform hover:scale-[1.03] hover:shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-1`}
+            onClick={() => navigate(link)}
           >
             <div className="flex items-center space-x-4 mb-2">
               <img
