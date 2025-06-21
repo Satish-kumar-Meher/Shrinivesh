@@ -86,8 +86,8 @@ const YearlyReturnGraphSummary = () => {
                   <Bar dataKey="investment" fill="#0e6371" name="Investment" />
                   <Bar dataKey="returns" fill="#10e2ea" name="Returns" />
                 </BarChart>
-              </ResponsiveContainer>
-
+              </ResponsiveContainer>   
+               
               {/* Indicators */}
               <div className="flex justify-center gap-8 text-sm font-medium mt-3">
                 <div className="flex items-center gap-2">

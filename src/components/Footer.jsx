@@ -68,7 +68,7 @@ const Footer = () => {
         >
           <img
             src={darkMode ? "./DarkLogo.gif" : "./LightLogo.gif"}
-            alt="Money's Matter Logo"
+            alt="Shrinivesh Logo"
             className="w-44 mb-4"
           />
           <p className={`text-sm leading-relaxed ${textColor}`}>
