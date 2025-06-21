@@ -45,7 +45,7 @@ const calculatorDetails = [
     emoji: "🪙",
     description:
       "Check how much your PPF account will grow over time. Get a clear idea of interest earned, maturity amount, and tax-free returns.➡ Great for conservative, long-term savers.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/ppf_calculator"
   },
   {
     name: "EPF Calculator",
@@ -59,7 +59,7 @@ const calculatorDetails = [
     emoji: "🎯",
     description:
       "Have a dream? Whether it's a car, home, vacation, or your child’s future — our Goal Setting Calculator helps you plan the exact amount and investment needed to reach it.➡ Set it. Plan it. Achieve it.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/sip_goal_calculator"
   },
   {
     name: "Composite Financial Goal Calculator",
@@ -108,7 +108,7 @@ const calculatorDetails = [
     emoji: "📈",
     description:
       "Planning to increase your SIP every year? This calculator helps you see the impact of SIP top-ups on your total wealth.➡ Perfect for salaried individuals with rising incomes.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/sip_stepup_calculator"
   },
 ];
 

@@ -145,6 +145,9 @@ import EmergencyGoalForm from './components/Goals/EmergencyForm';
 import DreamHomeForm from './components/Goals/DreamHome';
 import MonthlySIPCalculator from './components/AllCalculators/SIPCalculator';
 import EMICalculator from './components/AllCalculators/EMICalculator';
+import PPFCalculator from './components/AllCalculators/PPFCalculator';
+import StepUpSIPCalculator from './components/AllCalculators/StepUpSIPCalculator';
+import SIPGoalCalculator from './components/AllCalculators/SIPGoalCalculator';
 
 const router = createBrowserRouter([
   {
@@ -160,6 +163,10 @@ const router = createBrowserRouter([
       { path: "/calculators", element: <AllCalculators /> },
       { path: "/calculators/sip_calculator", element: <MonthlySIPCalculator /> },
       { path: "/calculators/emi_calculator", element: <EMICalculator /> },
+      { path: "/calculators/ppf_calculator", element: <PPFCalculator /> },
+      { path: "/calculators/sip_stepup_calculator", element: <StepUpSIPCalculator /> },
+      { path: "/calculators/sip_goal_calculator", element: <SIPGoalCalculator /> },
+
 
       {
         path: "/goals",

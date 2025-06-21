@@ -1,28 +1,31 @@
-
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
-import YearlyReturnGraphSummary from "./GraphSIP";
 
-const MonthlySIPCalculator = () => {
+const PPFCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
 
-  const [sipAmount, setSipAmount] = useState(50000);
-  const [rate, setRate] = useState(12);
-  const [years, setYears] = useState(15);
+  const [yearlyInvestment, setYearlyInvestment] = useState(50000);
+  const [timePeriod, setTimePeriod] = useState(15);
+  const [interestRate, setInterestRate] = useState(7.1);
 
-  const months = years * 12;
-  const monthlyRate = rate / 12 / 100;
+  const totalInvestment = yearlyInvestment * timePeriod;
 
-  const maturityValue = sipAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
-  const totalInvestment = sipAmount * months;
-  const returns = maturityValue - totalInvestment;
+  const maturityValue = useMemo(() => {
+    let total = 0;
+    for (let i = 1; i <= timePeriod; i++) {
+      total += yearlyInvestment * Math.pow(1 + interestRate / 100, timePeriod - i + 1);
+    }
+    return Math.round(total);
+  }, [yearlyInvestment, timePeriod, interestRate]);
 
-  const data = [
+  const totalReturns = maturityValue - totalInvestment;
+
+  const pieData = [
     { name: "Total Investment", value: totalInvestment, color: "#0e6371" },
-    { name: "Returns", value: returns, color: "#10e2ea" },
+    { name: "Returns", value: totalReturns, color: "#10e2ea" },
   ];
 
   const bgGradient = darkMode
@@ -46,10 +49,10 @@ const MonthlySIPCalculator = () => {
   const inputBg = darkMode ? "bg-[#0f1a26]/80 text-white" : "bg-white/80 text-black";
   const inputBorder = darkMode ? "border-[#10e2ea]/40" : "border-[#0e6371]/30";
   const hintColor = darkMode ? "text-gray-400" : "text-gray-600";
-  const slideColor = darkMode ? "accent-[#10e2ea]" : "accent-[#0e6371]"
+  const slideColor = darkMode ? "accent-[#10e2ea]" : "accent-[#0e6371]";
 
   return (
-    <section className={`relative mt-15 z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
+    <section className={`relative mt-15 z-0 py-20 transition-colors duration-500 ${bgGradient}`}>
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div
@@ -61,118 +64,125 @@ const MonthlySIPCalculator = () => {
             darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"
           }`}
         >
-          <h2 className={`text-2xl sm:text-3xl font-bold mb-6 ${titleColor}`}>Monthly SIP Calculator</h2>
+          <h2 className={`text-2xl sm:text-3xl font-bold mb-6 ${titleColor}`}>PPF Calculator</h2>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left: Sliders + Inputs */}
+            {/* LEFT SIDE */}
             <div>
-              {/* SIP Investment */}
-              <label className={`block mb-2 font-medium ${labelColor}`}>SIP Investment</label>
+              {/* Yearly Investment */}
+              <label className={`block mb-2 font-medium ${labelColor}`}>Yearly Investment (₹)</label>
               <div className="flex items-center gap-4 mb-1">
                 <input
                   type="range"
-                  min={100}
-                  max={100000}
-                  step={100}
-                  value={sipAmount}
-                  onChange={(e) => setSipAmount(Number(e.target.value))}
+                  min={500}
+                  max={150000}
+                  step={500}
+                  value={yearlyInvestment}
+                  onChange={(e) => setYearlyInvestment(Number(e.target.value))}
                   className={`w-full ${slideColor}`}
                 />
                 <input
                   type="number"
-                  min={100}
-                  max={100000}
-                  value={sipAmount}
-                  onChange={(e) => setSipAmount(Number(e.target.value))}
-                  className={`w-28 px-3 py-2 rounded-lg border ${inputBorder} ${inputBg}`}
+                  min={500}
+                  max={150000}
+                  value={yearlyInvestment}
+                  onChange={(e) => setYearlyInvestment(Number(e.target.value))}
+                  className={`w-32 px-3 py-2 rounded-lg border ${inputBorder} ${inputBg}`}
                 />
               </div>
-              <div className={`text-sm mb-4 ${hintColor}`}>Min: ₹100 | Max: ₹100000</div>
-
-              {/* Expected Return */}
-              <label className={`block mb-2 font-medium ${labelColor}`}>Expected Return Rate (p.a)</label>
-              <div className="flex items-center gap-4 mb-1">
-                <input
-                  type="range"
-                  min={1}
-                  max={30}
-                  step={0.1}
-                  value={rate}
-                  onChange={(e) => setRate(Number(e.target.value))}
-                  className={`w-full ${slideColor}`}
-                />
-                <input
-                  type="number"
-                  min={1}
-                  max={30}
-                  value={rate}
-                  onChange={(e) => setRate(Number(e.target.value))}
-                  className={`w-28 px-3 py-2 rounded-lg border ${inputBorder} ${inputBg}`}
-                />
-              </div>
-              <div className={`text-sm mb-4 ${hintColor}`}>Min: 1% | Max: 30%</div>
+              <div className={`text-sm mb-4 ${hintColor}`}>Min: ₹500 | Max: ₹1,50,000</div>
 
               {/* Time Period */}
               <label className={`block mb-2 font-medium ${labelColor}`}>Time Period (Years)</label>
               <div className="flex items-center gap-4 mb-1">
                 <input
                   type="range"
+                  min={15}
+                  max={40}
+                  value={timePeriod}
+                  onChange={(e) => setTimePeriod(Number(e.target.value))}
+                  className={`w-full ${slideColor}`}
+                />
+                <input
+                  type="number"
+                  min={15}
+                  max={40}
+                  value={timePeriod}
+                  onChange={(e) => setTimePeriod(Number(e.target.value))}
+                  className={`w-28 px-3 py-2 rounded-lg border ${inputBorder} ${inputBg}`}
+                />
+              </div>
+              <div className={`text-sm mb-4 ${hintColor}`}>Min: 15 yrs | Max: 40 yrs</div>
+
+              {/* Interest Rate */}
+              <label className={`block mb-2 font-medium ${labelColor}`}>Current Interest Rate (%)</label>
+              <div className="flex items-center gap-4 mb-1">
+                <input
+                  type="range"
                   min={1}
-                  max={30}
-                  value={years}
-                  onChange={(e) => setYears(Number(e.target.value))}
+                  max={12}
+                  step={0.1}
+                  value={interestRate}
+                  onChange={(e) => setInterestRate(Number(e.target.value))}
                   className={`w-full ${slideColor}`}
                 />
                 <input
                   type="number"
                   min={1}
-                  max={30}
-                  value={years}
-                  onChange={(e) => setYears(Number(e.target.value))}
+                  max={12}
+                  value={interestRate}
+                  onChange={(e) => setInterestRate(Number(e.target.value))}
                   className={`w-28 px-3 py-2 rounded-lg border ${inputBorder} ${inputBg}`}
                 />
               </div>
-              <div className={`text-sm mb-4 ${hintColor}`}>Min: 1 | Max: 30</div>
+              <div className={`text-sm mb-4 ${hintColor}`}>Usual PPF interest: ~7.1%</div>
 
               <p className={`mt-6 font-semibold italic ${titleColor}`}>
-                Compound your wealth with SIP in Mutual Funds
+                Estimate your Public Provident Fund growth
               </p>
             </div>
 
-            {/* Right: Pie Chart & Summary */}
+            {/* RIGHT SIDE */}
             <div className="flex flex-col items-center gap-4">
-              <div className="flex flex-col items-center">
-                <div className="flex gap-6 justify-center mb-2">
-                  <div className="text-center">
-                    <p className={`text-sm ${labelColor}`}>Total Investment</p>
-                    <p className={`${titleColor} font-bold`}>₹ {totalInvestment.toLocaleString("en-IN")}</p>
-                  </div>
-                  <div className="text-center">
-                    <p className={`text-sm ${labelColor}`}>Returns</p>
-                    <p className="text-green-500 font-bold">₹ {returns.toLocaleString("en-IN")}</p>
-                  </div>
+              <div className="flex gap-6 justify-center mb-2 text-center">
+                <div>
+                  <p className={`text-sm ${labelColor}`}>Total Investment</p>
+                  <p className={`${titleColor} font-bold`}>
+                    ₹ {totalInvestment.toLocaleString("en-IN")}
+                  </p>
                 </div>
-                <p className={`text-sm pt-4 font-medium ${labelColor}`}>
-                  Maturity Value:<span className={`${darkMode ? "text-amber-300" : "text-green-800"} pl-5`}>₹ {maturityValue.toLocaleString("en-IN")}</span>
-                </p>
+                <div>
+                  <p className={`text-sm ${labelColor}`}>Returns</p>
+                  <p className="text-green-500 font-bold">
+                    ₹ {totalReturns.toLocaleString("en-IN")}
+                  </p>
+                </div>
               </div>
-          <p className="text-[#e77e23]"></p>
+
+              {/* PIE CHART */}
               <div className="w-full h-64">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
-                      data={data}
+                      data={pieData}
                       dataKey="value"
                       innerRadius={70}
                       outerRadius={100}
                       paddingAngle={3}
                       label={({ cx, cy }) => (
-                        <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle" fill="#e77e23"  fontWeight="bold">
-                         ₹{Math.round(maturityValue).toLocaleString("en-IN")}
+                        <text
+                          x={cx}
+                          y={cy}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          fill={darkMode ? "#10e2ea" : "#0e6371"}
+                          fontWeight="bold"
+                        >
+                          ₹{maturityValue.toLocaleString("en-IN")}
                         </text>
                       )}
                     >
-                      {data.map((entry, idx) => (
+                      {pieData.map((entry, idx) => (
                         <Cell key={`cell-${idx}`} fill={entry.color} />
                       ))}
                     </Pie>
@@ -181,6 +191,7 @@ const MonthlySIPCalculator = () => {
                 </ResponsiveContainer>
               </div>
 
+              {/* Legend */}
               <div className="flex gap-8 text-sm font-medium mt-4">
                 <div className="flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-[#0e6371]" />
@@ -195,18 +206,8 @@ const MonthlySIPCalculator = () => {
           </div>
         </motion.div>
       </div>
-      <YearlyReturnGraphSummary/>
     </section>
   );
 };
 
-export default MonthlySIPCalculator;
-
-
-
-
-
-
-
-
-
+export default PPFCalculator;
