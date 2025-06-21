@@ -71,7 +71,7 @@ const Navbar = () => {
           <a
             key={item.name}
             onClick={() => handleLinkClick(item.link)}
-            className={`flex items-center gap-1 px-4 py-2 rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${
+            className={`flex items-center gap-1 px-4 py-2 cursor-pointer rounded-full hover:scale-105 transition-all duration-300 text-sm font-medium shadow-sm ${
               isActive(item.link) ? "scale-105" : ""
             }`}
             style={{
