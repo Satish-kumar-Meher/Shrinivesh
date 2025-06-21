@@ -24,7 +24,7 @@ const calculatorDetails = [
     emoji: "🏠",
     description:
       "Buying a home or car? Calculate your monthly EMI in seconds. Enter loan amount, interest rate, and tenure to get your monthly payment instantly.➡ Use our EMI Calculator before taking any loan.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/emi_calculator"
   },
   {
     name: "Retirement Planning Calculator",
