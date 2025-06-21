@@ -265,7 +265,7 @@ const PPFCalculator = () => {
   const labelColor = darkMode ? "text-white" : "text-black";
   const titleColor = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
   const inputBg = darkMode ? "bg-[#0f1a26]/80 text-white" : "bg-white/80 text-black";
-  const inputBgDis = darkMode ? "bg-[#0f1a26]/100 text-white" : "bg-white/100 text-black";
+  const inputBgDis = darkMode ? "bg-gray-700 text-white" : "bg-gray-300 text-black";
   const inputBorder = darkMode ? "border-[#10e2ea]/40" : "border-[#0e6371]/30";
   const hintColor = darkMode ? "text-gray-400" : "text-gray-600";
   const slideColor = darkMode ? "accent-[#10e2ea]" : "accent-[#0e6371]";
@@ -335,7 +335,7 @@ const PPFCalculator = () => {
 
               {/* Interest Rate (Fixed) */}
               <label className={`block mb-2 font-medium ${labelColor}`}>Current Interest Rate (%)</label>
-              <div className={`text-lg font-semibold mb-6 w-28 px-8 py-2 rounded-lg border ${inputBorder} bg-gray-700 ${titleColor}`}>7.1%</div>
+              <div className={`text-lg font-semibold mb-6 w-28 px-8 py-2 rounded-lg border ${inputBorder} ${inputBgDis} ${titleColor}`}>7.1%</div>
 
               <p className={`mt-6 font-semibold italic ${titleColor}`}>
                 Estimate your Public Provident Fund growth
