@@ -408,9 +408,6 @@ const GoalSIPCalculator = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Yearly Bar Graph */}
-      <YearlyReturnGraphSummary />
     </section>
   );
 };
