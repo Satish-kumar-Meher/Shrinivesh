@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
-import YearlyReturnGraphSummary from "./GraphSIP";
+import GraphSIP from "./GraphSIP";
 
 const MonthlySIPCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -195,7 +195,7 @@ const MonthlySIPCalculator = () => {
           </div>
         </motion.div>
       </div>
-      <YearlyReturnGraphSummary/>
+      <GraphSIP sipAmount={sipAmount} rate={rate} years={years} />
     </section>
   );
 };
