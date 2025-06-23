@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Bubbles } from "../../utils/Bubble";
 import GraphStepUpSIP from "./GraphStepUpSIP";
 
+
 const StepUpSIPCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
 
@@ -210,7 +211,15 @@ const StepUpSIPCalculator = () => {
           </div>
         </motion.div>
       </div>
-      <GraphStepUpSIP/>
+      <GraphStepUpSIP
+        sipAmount={sipAmount}
+        stepUpPercent={stepUpPercent}
+        rate={rate}
+        years={years}
+        totalInvestment={totalInvestment}
+        returns={returns}
+        maturityValue={maturityValue}
+      />
     </section>
   );
 };

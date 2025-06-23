@@ -6,6 +6,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
 import GraphSIP from "./GraphSIP";
 
+
 const MonthlySIPCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
 

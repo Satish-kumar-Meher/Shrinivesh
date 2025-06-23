@@ -3,27 +3,37 @@ import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
 
-const GraphStepUpSIP = () => {
+const GraphStepUpSIP = ({ sipAmount, stepUpPercent, rate, years }) => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
 
-  const data = [
-    { year: "1", investment: 600000, returns: 40466, maturity: 640466 },
-    { year: "2", investment: 1248000, returns: 165397, maturity: 1413397 },
-    { year: "3", investment: 1947840, returns: 391851, maturity: 2339691 },
-    { year: "4", investment: 2703667, returns: 739559, maturity: 3443226 },
-    { year: "5", investment: 3519961, returns: 1231300, maturity: 4751261 },
-    { year: "6", investment: 4401557, returns: 1893337, maturity: 6294895 },
-    { year: "7", investment: 5353682, returns: 2755903, maturity: 8109585 },
-    { year: "8", investment: 6381977, returns: 3853753, maturity: 10235730 },
-    { year: "9", investment: 7492535, returns: 5226801, maturity: 12719335 },
-    { year: "10", investment: 8691937, returns: 6920823, maturity: 15612761 },
-    { year: "11", investment: 9987292, returns: 8988276, maturity: 18975569 },
-    { year: "12", investment: 11386276, returns: 11489206, maturity: 22875482 },
-    { year: "13", investment: 12897178, returns: 14492291, maturity: 27389469 },
-    { year: "14", investment: 14528952, returns: 18076015, maturity: 32604967 },
-    { year: "15", investment: 16291268, returns: 22329998, maturity: 38621267 },
-  ];
+  const r = rate / 100 / 12; // Monthly interest rate
+  const yearlyData = [];
 
+  for (let year = 1; year <= years; year++) {
+    let totalInvestment = 0;
+    let totalMaturity = 0;
+
+    for (let i = 1; i <= year; i++) {
+      const currentSIP = sipAmount * Math.pow(1 + stepUpPercent / 100, i - 1);
+
+      for (let m = 0; m < 12; m++) {
+        const monthsRemaining = (year - i) * 12 + (12 - m);
+        const fv = currentSIP * Math.pow(1 + r, monthsRemaining);
+        totalMaturity += fv;
+      }
+
+      totalInvestment += currentSIP * 12;
+    }
+
+    yearlyData.push({
+      year: `${year}`,
+      investment: Math.round(totalInvestment),
+      returns: Math.round(totalMaturity - totalInvestment),
+      maturity: Math.round(totalMaturity),
+    });
+  }
+
+  // Styling variables
   const bgGradient = darkMode
     ? "bg-gradient-to-br from-[#0b0d1a] to-[#081c29]"
     : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]";
@@ -65,12 +75,11 @@ const GraphStepUpSIP = () => {
             {/* Bar Chart */}
             <div className="w-full ml-2 h-96">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data}>
+                <BarChart data={yearlyData}>
                   <XAxis dataKey="year" stroke={darkMode ? "#ffffff" : "#333333"} />
                   <YAxis
                     stroke={darkMode ? "#ffffff" : "#333333"}
                     tickFormatter={(value) => `₹${(value / 100000).toFixed(0)}L`}
-                    domain={[0, 40000000]}
                   />
                   <Tooltip
                     contentStyle={{
@@ -86,7 +95,6 @@ const GraphStepUpSIP = () => {
                 </BarChart>
               </ResponsiveContainer>
 
-              {/* Indicators */}
               <div className="flex justify-center gap-8 text-sm font-medium mt-3">
                 <div className="flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-[#0e6371]" />
@@ -111,7 +119,7 @@ const GraphStepUpSIP = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((row, index) => (
+                  {yearlyData.map((row, index) => (
                     <tr key={index} className="border-b last:border-none border-gray-500/10">
                       <td className={`px-4 py-2 ${tableTextColor}`}>{row.year}</td>
                       <td className={`px-4 py-2 ${tableTextColor}`}>₹ {row.investment.toLocaleString("en-IN")}</td>
