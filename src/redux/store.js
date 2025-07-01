@@ -1,6 +1,7 @@
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import modeSlice from "./modeSlice.js";
+import goalDataSlice from "./goalDataSlice.js";
 import { 
     persistReducer,
     FLUSH,
@@ -20,7 +21,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    screenMode : modeSlice
+    screenMode : modeSlice,
+    goalData : goalDataSlice
     
 })
 

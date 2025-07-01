@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 const calculatorDetails = [
   {
-    name: "SIP Return Calculator",
+    name: "SIP Calculator",
     emoji: "🧮",
     description:
       "Curious how much your monthly SIP can grow in 10, 20, or 30 years? Use our SIP Return Calculator to get instant and accurate estimates. Perfect for long-term mutual fund investors.➡ Try now – it's fast, free, and beginner-friendly!",
@@ -17,7 +17,7 @@ const calculatorDetails = [
     emoji: "💰",
     description:
       "Dreaming of ₹1 Crore? Know exactly how much you need to invest monthly and for how long. Our Crorepati SIP Calculator gives you a clear path to 1 crore wealth goal.➡ Simple steps to your first crore.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/become_crorepati_calculator"
   },
   {
     name: "EMI Calculator",
@@ -31,14 +31,14 @@ const calculatorDetails = [
     emoji: "👴",
     description:
       "Not sure how much to save for retirement? Use our calculator to know the exact monthly investment needed to live worry-free post-retirement.➡ Plan today, enjoy tomorrow.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/retirement_planning_calculator"
   },
   {
     name: "Asset Allocation Calculator",
     emoji: "📊",
     description:
       "Confused between equity, debt, and gold? Our Asset Allocation tool helps you distribute your money smartly based on age and risk profile.➡ Smart investing starts with smart allocation.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/asset_allocation_calculator"
   },
   {
     name: "PPF Calculator",
@@ -52,7 +52,7 @@ const calculatorDetails = [
     emoji: "👷",
     description:
       "Get a complete breakdown of your Employee Provident Fund (EPF) savings and employer contributions.➡ Helpful for salaried professionals planning future expenses.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/epf_calculator"
   },
   {
     name: "Goal Setting Calculator",
@@ -87,7 +87,7 @@ const calculatorDetails = [
     emoji: "🔁",
     description:
       "See how your money grows when it compounds over years. Perfect for investors who want to understand how time can make wealth grow exponentially.➡ Albert Einstein called it the 8th wonder — try it now.",
-    link : "/calculators/sip_calculator"
+    link : "/calculators/compounding_calculator"
   },
   {
     name: "Spending Less Calculator",
@@ -104,7 +104,7 @@ const calculatorDetails = [
     link : "/calculators/sip_calculator"
   },
   {
-    name: "SIP Step Up Calculator",
+    name: "Step Up SIP Calculator",
     emoji: "📈",
     description:
       "Planning to increase your SIP every year? This calculator helps you see the impact of SIP top-ups on your total wealth.➡ Perfect for salaried individuals with rising incomes.",

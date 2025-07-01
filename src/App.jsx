@@ -148,6 +148,11 @@ import EMICalculator from './components/AllCalculators/EMICalculator';
 import PPFCalculator from './components/AllCalculators/PPFCalculator';
 import StepUpSIPCalculator from './components/AllCalculators/StepUpSIPCalculator';
 import SIPGoalCalculator from './components/AllCalculators/SIPGoalCalculator';
+import CompoundInterestCalculator from './components/AllCalculators/CompoundingCalculator';
+import EPFCalculator from './components/AllCalculators/EPFCalculator';
+import BecomeCrorepatiCalculator from './components/AllCalculators/CrorePatiCalculator';
+import RetirementCalculator from './components/AllCalculators/RetirementPlanningCalculator';
+import AssetAllocationCalculator from './components/AllCalculators/AssetAllocation';
 
 const router = createBrowserRouter([
   {
@@ -166,6 +171,13 @@ const router = createBrowserRouter([
       { path: "/calculators/ppf_calculator", element: <PPFCalculator /> },
       { path: "/calculators/sip_stepup_calculator", element: <StepUpSIPCalculator /> },
       { path: "/calculators/sip_goal_calculator", element: <SIPGoalCalculator /> },
+      { path: "/calculators/compounding_calculator", element: <CompoundInterestCalculator /> },
+      { path: "/calculators/epf_calculator", element: <EPFCalculator/> },
+      { path: "/calculators/become_crorepati_calculator", element: <BecomeCrorepatiCalculator/> },
+      { path: "/calculators/retirement_planning_calculator", element: <RetirementCalculator/> },
+      { path: "/calculators/asset_allocation_calculator", element: <AssetAllocationCalculator/> },
+
+
 
 
       {

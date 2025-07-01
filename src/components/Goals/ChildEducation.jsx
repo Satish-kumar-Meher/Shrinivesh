@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { ChevronDown, Check } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
+import GoalSummary from "./GoalSummery";
 
 const riskOptions = [
   "Conservative",
@@ -64,6 +65,7 @@ const ChildEducationForm = () => {
     : "bg-gradient-to-r from-[#0e6371] to-[#84e9f0]";
 
   return (
+    <>
     <section
       className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
     >
@@ -187,6 +189,8 @@ const ChildEducationForm = () => {
         </div>
       </motion.div>
     </section>
+    <GoalSummary/>
+    </>
   );
 };
 
