@@ -175,7 +175,7 @@ const Home = () => {
                 initial={{ x: 150, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -150, opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.3,  }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 onDragEnd={(e, { offset, velocity }) => {
