@@ -44,12 +44,12 @@ const Footer = () => {
 
   const socialIcons = [
     { icon: <FaFacebookF />, link: "https://facebook.com" },
-    { icon: <FaInstagram />, link: "https://instagram.com" },
-    { icon: <FaYoutube />, link: "https://youtube.com" },
-    { icon: <FaTwitter />, link: "https://twitter.com" },
+    { icon: <FaInstagram />, link: "https://www.instagram.com/shri_nivesh/" },
+    { icon: <FaYoutube />, link: "https://www.youtube.com/@Shri_Nivesh?sub_confirmation=1" },
+    { icon: <FaTwitter />, link: "https://x.com/intent/follow?screen_name=Shri_Nivesh" },
     { icon: <FaLinkedinIn />, link: "https://linkedin.com" },
     { icon: <FaDiscord />, link: "https://discord.com" },
-    { icon: <FaWhatsapp />, link: "https://wa.me" },
+    { icon: <FaWhatsapp />, link: "https://wa.me/919348112495?text=Hi%2C%0AI%E2%80%99m%20looking%20to%20start%20my%20Mutual%20Fund%20investment%20journey%20and%20would%20love%20to%20do%20it%20under%20your%20expert%20guidance" },
   ];
 
   return (
@@ -118,11 +118,11 @@ const Footer = () => {
           <h4 className={`font-semibold text-lg mb-4 ${headingColor}`}>Drop Us a Line</h4>
           <div className={`flex items-center mb-3 ${textColor}`}>
             <FaEnvelope className="mr-2 text-xl" />
-            <span>support@shrinivesh.in</span>
+            <span>support@shrinivesh.com</span>
           </div>
           <div className={`flex items-center mb-6 ${textColor}`}>
             <FaPhoneAlt className="mr-2 text-xl" />
-            <span>Toll Free: 1800-123-4567</span>
+            <span>Toll Free: +91 9348112495</span>
           </div>
 
           <h4 className={`font-semibold text-lg mb-3 ${headingColor}`}>Follow Us</h4>

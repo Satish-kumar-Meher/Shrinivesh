@@ -70,17 +70,17 @@ const Contact = () => {
           <div className="space-y-5 text-base sm:text-lg">
             <div className="flex items-center gap-4">
               <Phone className={`${highlight}`} />
-              <span className={textColor}>+91 9414016157</span>
+              <span className={textColor}>+91 9348112495</span>
             </div>
             <div className="flex items-center gap-4">
               <Mail className={`${highlight}`} />
-              <span className={textColor}>anubandh@moneysmatter.com</span>
+              <span className={textColor}>support@shrinivesh.com</span>
             </div>
             <div className="flex items-start gap-4">
               <MapPin className={`${highlight} mt-1`} />
               <span className={textColor}>
-                Money's Matter, 9A - Moti Doongri, <br />
-                Alwar - 301001.
+                ShriNivesh, Nuapada, Odisha <br />
+                Nuapada - 766108.
               </span>
             </div>
           </div>
