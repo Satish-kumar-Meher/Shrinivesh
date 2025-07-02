@@ -18,6 +18,7 @@ const persistConfig = {
     key: 'root',
     version: 1,
     storage,
+    blacklist: ['goalData'],// ⛔ Exclude goalData slice from being persisted
 }
 
 const rootReducer = combineReducers({
