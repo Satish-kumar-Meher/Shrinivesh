@@ -96,7 +96,7 @@ const outerHoverGlow = darkMode
           className="w-full max-w-md"
         >
           <img
-            src="https://www.moneysmatter.com/images/about/businessnew.png"
+            src="/Home/2.jpg"
             alt="Piggy bank with growth"
             className="rounded-3xl shadow-xl object-contain w-full h-auto"
           />

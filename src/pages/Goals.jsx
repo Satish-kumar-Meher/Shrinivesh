@@ -8,42 +8,42 @@ import { useNavigate } from "react-router";
 const goals = [
   {
     title: "Dream Home",
-    image: "https://www.moneysmatter.com/images/banners/home-banner-4.png",
+    image: "/Home/7.jpg",
     description:
       "Plan and save for your perfect home with smart investments. Ensure a roof over your head that reflects your dreams.",
     links:"/goals/dream_home",
   },
   {
     title: "Wealth Creation",
-    image: "https://www.moneysmatter.com/images/banners/home-banner-5.png",
+    image: "/Home/5.jpg",
     description:
       "Build long-term wealth through disciplined investments. Grow your money and secure financial freedom.",
       links:"/goals/wealth_creation",
   },
   {
     title: "Retirement",
-    image: "https://www.moneysmatter.com/images/banners/home-banner-1.png",
+    image: "/Home/1.jpg",
     description:
       "Secure a peaceful and financially free retirement life. Let your golden years be truly golden.",
       links:"/goals/retirement",
   },
   {
     title: "Child's Education",
-    image: "https://www.moneysmatter.com/images/banners/home-banner.png",
+    image: "/Home/3.jpg",
     description:
       "Invest early for your child's bright educational future. Support their dreams with the right planning.",
       links:"/goals/child_education",
   },
   {
     title: "Child's Wedding",
-    image: "https://www.moneysmatter.com/images/banners/home-banner-3.png",
+    image: "/Home/6.jpg",
     description:
       "Be financially prepared for your child’s big celebration. Make it memorable without financial stress.",
       links:"/goals/child_wedding",
   },
   {
     title: "Emergency",
-    image: "https://www.moneysmatter.com/images/banners/home-banner-7.png",
+    image: "/Home/8.jpg",
     description:
       "Create an emergency fund for life’s unexpected challenges. Stay ready for any surprise expenses.",
       links:"/goals/emergency",
