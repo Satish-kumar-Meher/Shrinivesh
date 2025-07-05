@@ -153,6 +153,7 @@ import EPFCalculator from './components/AllCalculators/EPFCalculator';
 import BecomeCrorepatiCalculator from './components/AllCalculators/CrorePatiCalculator';
 import RetirementCalculator from './components/AllCalculators/RetirementPlanningCalculator';
 import AssetAllocationCalculator from './components/AllCalculators/AssetAllocation';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -215,7 +216,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return(
+
+    <>
+    <HelmetProvider>
+    <RouterProvider router={router} />
+    </HelmetProvider>
+    </>
+  )
+  
 }
 
 export default App;

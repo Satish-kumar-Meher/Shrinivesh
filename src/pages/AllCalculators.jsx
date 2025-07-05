@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Bubbles } from "../utils/Bubble";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router";
+import SEO from "../utils/SEO";
 
 const calculatorDetails = [
   {
@@ -155,6 +156,7 @@ const AllCalculators = () => {
     <section
       className={`relative z-0 py-20 px-4 sm:px-8 md:px-12 lg:px-20 ${bgGradient} transition-colors duration-500 overflow-hidden`}
     >
+      <SEO tittle={"Calculators Page"} description={"This is the all calculators page"} />
       <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center mb-12">

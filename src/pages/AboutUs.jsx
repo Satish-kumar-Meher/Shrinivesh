@@ -104,6 +104,7 @@
 
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import SEO from "../utils/SEO";
 
 const AboutUs = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -129,6 +130,7 @@ const AboutUs = () => {
 
   return (
     <section className={`relative z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
+      <SEO tittle={"About Page"} description={"This is the about page"} />
       {/* Bubbles */}
       <motion.div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {[...Array(25)].map((_, i) => {

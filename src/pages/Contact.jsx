@@ -11,6 +11,7 @@ import {
   FileText,
 } from "lucide-react";
 import { Bubbles } from "../utils/Bubble";
+import SEO from "../utils/SEO";
 
 const Contact = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -50,6 +51,7 @@ const Contact = () => {
     <section
       className={`relative z-0 py-20 px-4 sm:px-8 md:px-12 lg:px-20 ${bgGradient} transition-colors duration-500 overflow-hidden`}
     >
+      <SEO tittle={"Contact Page"} description={"This is the contact page"} />
       <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">

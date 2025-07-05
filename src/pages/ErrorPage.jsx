@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Bubbles } from "../utils/Bubble";
 import { useNavigate } from "react-router-dom";
+import SEO from "../utils/SEO";
 
 const ErrorPage = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -26,6 +27,7 @@ const ErrorPage = () => {
     <section
       className={`relative min-h-screen flex items-center justify-center px-4 sm:px-8 ${bgGradient} transition-colors duration-500 overflow-hidden`}
     >
+      <SEO tittle={"Error Page"} description={"This is the error page"} />
       <Bubbles darkMode={darkMode} />
 
       <motion.div

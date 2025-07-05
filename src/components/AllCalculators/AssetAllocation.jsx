@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
+import SEO from "../../utils/SEO";
 
 const AssetAllocationCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -145,6 +146,7 @@ const calculateAllocation = () => {
 
   return (
     <section className={`relative mt-15 py-20 ${bgGradient}`}>
+      <SEO tittle={"AssetAllocation Page"} description={"This is the assetallocation page"} />
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

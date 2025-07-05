@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
+import SEO from "../../utils/SEO";
 
 const EMICalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -52,6 +53,7 @@ const EMICalculator = () => {
 
   return (
     <section className={`relative mt-16 z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
+      <SEO tittle={"EMI calculator Page"} description={"This is the EMI calculator page"} />
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

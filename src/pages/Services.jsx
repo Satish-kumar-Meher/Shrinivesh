@@ -151,6 +151,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { Bubbles } from "../utils/Bubble";
+import SEO from "../utils/SEO";
 
 const Services = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -226,7 +227,7 @@ const Services = () => {
     <section
       className={`relative z-0 py-20 overflow-hidden ${bgGradient} transition-colors duration-500`}
     >
-
+    <SEO tittle={"Service Page"} description={"This is the service page"} />
       
     <Bubbles darkMode={darkMode} />
 
