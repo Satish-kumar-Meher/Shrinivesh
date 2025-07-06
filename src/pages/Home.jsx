@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import AboutComp from '../components/Home/AboutComp';
 import CounterSection from '../components/Home/CounterSection';
 import SecureSection from '../components/Home/SecureSection';
-import TopMutualFunds from '../components/Home/TopMutualFunds';
+// import TopMutualFunds from '../components/Home/TopMutualFunds';
 import InvestmentReturns from '../components/Home/InvestmentCalc';
-import TestimonialSlider from '../components/Home/Testimonials';
-import LatestBlog from '../components/Home/BlogLatest';
-import LatestNews from '../components/Home/LatestNews';
+// import TestimonialSlider from '../components/Home/Testimonials';
+// import LatestBlog from '../components/Home/BlogLatest';
+// import LatestNews from '../components/Home/LatestNews';
 import AMCMarquee from '../components/Home/AMCMarquee';
 import AssetAllocation from '../components/Home/AssetAllocation';
 import { Bubbles } from '../utils/Bubble';
@@ -255,12 +255,12 @@ const Home = () => {
       <AboutComp />
       <CounterSection />
       <SecureSection />
-      <TopMutualFunds />
+      {/* <TopMutualFunds /> */}
       <InvestmentReturns />
       <AssetAllocation />
-      <TestimonialSlider />
-      <LatestBlog />
-      <LatestNews />
+      {/* <TestimonialSlider /> */}
+      {/* <LatestBlog /> */}
+      {/* <LatestNews /> */}
       <AMCMarquee />
     </>
   );

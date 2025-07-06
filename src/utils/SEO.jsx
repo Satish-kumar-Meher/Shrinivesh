@@ -9,6 +9,7 @@ function SEO({tittle,description}) {
             name='description'
             content={description}
         />    
+        <meta name="robots" content="index, follow" />
     </Helmet>
   )
 }
