@@ -36,7 +36,7 @@ const Navbar = () => {
     { name: "About", icon: <FaInfoCircle />, link: "/about" },
     { name: "Services", icon: <FaListUl />, link: "/services" },
     { name: "Calculators", icon: <FaCalculator />, link: "/calculators" },
-    { name: "MF Research", icon: <FaChartLine />, link: "/https://mfofa.fiinfra.in/mf" },
+    // { name: "MF Research", icon: <FaChartLine />, link: "/https://mfofa.fiinfra.in/mf" },
     { name: "Goals", icon: <FaBullseye />, link: "/goals" },
     { name: "More", icon: <FaListUl />, link: "/more" },
     { name: "Contact", icon: <FaPhoneAlt />, link: "/contact" },
