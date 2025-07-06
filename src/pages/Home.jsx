@@ -433,7 +433,7 @@ const Home = () => {
 
             <div className="w-full flex justify-center sm:justify-start mt-4">
               <motion.button
-                className={`px-6 py-2 rounded-2xl shadow-md transition ${btnGradient}`}
+                className={`px-6 py-2 rounded-2xl cursor-pointer shadow-md transition ${btnGradient}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate(slides[current].links)}
@@ -471,13 +471,13 @@ const Home = () => {
             <div className="absolute inset-y-1/2 left-0 right-0 flex justify-between items-center px-4 transform -translate-y-1/2">
               <button
                 onClick={prevSlide}
-                className="bg-white text-black p-2 rounded-full shadow-lg hover:scale-110 transition"
+                className="bg-white text-black p-2 cursor-pointer rounded-full shadow-lg hover:scale-110 transition"
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={nextSlide}
-                className="bg-white text-black p-2 rounded-full shadow-lg hover:scale-110 transition"
+                className="bg-white text-black p-2 cursor-pointer rounded-full shadow-lg hover:scale-110 transition"
               >
                 <ChevronRight />
               </button>
@@ -491,7 +491,7 @@ const Home = () => {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-3 h-3 mx-1 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 mx-1 rounded-full cursor-pointer transition-all duration-300 ${
                 i === current ? 'bg-cyan-500 scale-125' : 'bg-gray-400'
               }`}
               aria-label={`Go to slide ${i + 1}`}
