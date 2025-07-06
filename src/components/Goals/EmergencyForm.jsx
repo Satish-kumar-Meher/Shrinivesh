@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const EmergencyGoalForm = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -36,7 +36,7 @@ const EmergencyGoalForm = () => {
     <section
       className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
     > 
-            <SEO tittle={"Emergency Page"} description={"This is the Emergency page"} />
+            {/* <SEO tittle={"Emergency Page"} description={"This is the Emergency page"} /> */}
       <Bubbles darkMode={darkMode} />
 
       <motion.div

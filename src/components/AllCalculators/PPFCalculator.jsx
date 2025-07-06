@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const PPFCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -57,7 +57,7 @@ const PPFCalculator = () => {
 
   return (
     <section className={`relative mt-15 z-0 py-20 transition-colors duration-500 ${bgGradient}`}>
-      <SEO tittle={"PPF calculator Page"} description={"This is the PPF calculator page"} />
+      {/* <SEO tittle={"PPF calculator Page"} description={"This is the PPF calculator page"} /> */}
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

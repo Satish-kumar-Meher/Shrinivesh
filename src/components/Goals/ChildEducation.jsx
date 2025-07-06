@@ -512,7 +512,7 @@ import { Bubbles } from "../../utils/Bubble";
 import GoalSummary from "./GoalSummery";
 import { setGoalData, } from "../../redux/goalDataSlice";
 import { toast } from "react-toastify";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const riskOptions = [
   "Conservative",
@@ -708,7 +708,7 @@ const ChildEducationForm = () => {
       <section
         className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br  ${bg}`}
       > 
-        <SEO tittle={"Child Education Page"} description={"This is the ChildEducation page"} />
+        {/* <SEO tittle={"Child Education Page"} description={"This is the ChildEducation page"} /> */}
         <Bubbles darkMode={darkMode} />
 
         <motion.div

@@ -213,7 +213,7 @@ import { motion } from "framer-motion";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
 import YearlyReturnGraphSummary from "./GraphSIP";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const GoalSIPCalculator = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -262,7 +262,7 @@ const GoalSIPCalculator = () => {
 
   return (
     <section className={`relative mt-15 z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
-      <SEO tittle={"SIPGoal calculator Page"} description={"This is the SIPGoal calculator page"} />
+      {/* <SEO tittle={"SIPGoal calculator Page"} description={"This is the SIPGoal calculator page"} /> */}
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

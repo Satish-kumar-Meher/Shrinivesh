@@ -247,7 +247,7 @@ import { motion } from "framer-motion";
 import { Bubbles } from "../utils/Bubble";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { BookText, Newspaper, HelpCircle, Users, BarChart3 } from "lucide-react";
-import SEO from "../utils/SEO";
+// import SEO from "../utils/SEO";
 
 const sections = [
   {
@@ -308,7 +308,7 @@ const More = () => {
     <section
       className={`relative z-0 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 ${bgGradient} transition-colors duration-500 overflow-hidden`}
     >
-      <SEO tittle={"More Page"} description={"This is the more page"} />
+      {/* <SEO tittle={"More Page"} description={"This is the more page"} /> */}
       <Bubbles darkMode={darkMode} />
 
       {isMainMorePage && (

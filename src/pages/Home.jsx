@@ -14,7 +14,7 @@ import AMCMarquee from '../components/Home/AMCMarquee';
 import AssetAllocation from '../components/Home/AssetAllocation';
 import { Bubbles } from '../utils/Bubble';
 import { useNavigate } from 'react-router';
-import SEO from '../utils/SEO';
+// import SEO from '../utils/SEO';
 
 const slides = [
   {
@@ -123,7 +123,7 @@ const Home = () => {
             : 'bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]'
         }`}
       >
-        <SEO tittle={"Home Page"} description={"This is the home page"} />
+        {/* <SEO tittle={"Home Page"} description={"This is the home page"} /> */}
         <Bubbles darkMode={darkMode} />
 
         <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 py-16 gap-10 max-w-7xl w-full z-10">

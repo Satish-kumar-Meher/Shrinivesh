@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const GoalSummary = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -77,7 +77,7 @@ const GoalSummary = () => {
     <section
       className={`relative z-0 pt-15 pb-10 overflow-hidden transition-colors duration-500 ${bgGradient}`}
     > 
-            <SEO tittle={"GoalSummery Page"} description={"This is the GoalSummery page"} />
+            {/* <SEO tittle={"GoalSummery Page"} description={"This is the GoalSummery page"} /> */}
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

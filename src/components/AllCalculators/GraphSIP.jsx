@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const GraphSIP = ({ sipAmount, rate, years }) => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -54,7 +54,7 @@ const GraphSIP = ({ sipAmount, rate, years }) => {
 
   return (
     <section className={`relative mt-16 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
-      <SEO tittle={"Graph Page"} description={"This is the Graph page"} />
+      {/* <SEO tittle={"Graph Page"} description={"This is the Graph page"} /> */}
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div

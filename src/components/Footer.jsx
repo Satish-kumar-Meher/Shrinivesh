@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhoneAlt, FaFacebookF, FaInstagram, FaYoutube, FaTwitter, FaLinkedinIn, FaDiscord, FaWhatsapp } from "react-icons/fa";
 import { Bubbles } from "../utils/Bubble";
-import SEO from "../utils/SEO";
+// import SEO from "../utils/SEO";
 
 const Footer = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -55,7 +55,7 @@ const Footer = () => {
 
   return (
     <footer className={`relative z-0 ${bgGradient} py-14 md:py-16 lg:py-20 overflow-hidden`}>
-              <SEO tittle={"Footer"} description={"This is the Footer"} />
+              {/* <SEO tittle={"Footer"} description={"This is the Footer"} /> */}
       <Bubbles darkMode={darkMode} />
 
       {/* Main Footer Content */}

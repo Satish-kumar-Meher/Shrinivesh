@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { ChevronDown, Check } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const riskOptions = [
   "Conservative",
@@ -71,7 +71,7 @@ const WealthCreationForm = () => {
     <section
       className={`relative mt-15 min-h-screen py-20 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-br ${bg}`}
     > 
-              <SEO tittle={"WealthCreation Page"} description={"This is the WealthCreation page"} />
+              {/* <SEO tittle={"WealthCreation Page"} description={"This is the WealthCreation page"} /> */}
       <Bubbles darkMode={darkMode} />
 
       <motion.div

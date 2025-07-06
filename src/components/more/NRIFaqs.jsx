@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const nriFaqs = [
   {
@@ -118,7 +118,7 @@ const NriFaqs = () => {
     <section
       className={`relative z-0 min-h-screen px-4 py-20 sm:px-8 md:px-12 lg:px-20 ${bgGradient} transition-colors duration-500`}
     > 
-              <SEO tittle={"NRI FAQ Page"} description={"This is the NRI FAQ page"} />
+              {/* <SEO tittle={"NRI FAQ Page"} description={"This is the NRI FAQ page"} /> */}
       <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-16">

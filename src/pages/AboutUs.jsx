@@ -104,7 +104,7 @@
 
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import SEO from "../utils/SEO";
+// import SEO from "../utils/SEO";
 
 const AboutUs = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -130,7 +130,7 @@ const AboutUs = () => {
 
   return (
     <section className={`relative z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
-      <SEO tittle={"About Page"} description={"This is the about page"} />
+      {/* <SEO tittle={"About Page"} description={"This is the about page"} /> */}
       {/* Bubbles */}
       <motion.div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {[...Array(25)].map((_, i) => {
@@ -233,9 +233,7 @@ const AboutUs = () => {
         <div>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
             <h3 className={`text-4xl font-bold mb-6 text-center ${textColor} `}>Our <span className={highlight}>Leadership Philosophy</span></h3>
-            <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor} `}>Driven by Knowledge, Guided by Values
-
-</h4>
+            <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor} `}>Driven by Knowledge, Guided by Values</h4>
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className=" space-y-4 text-sm sm:text-base leading-relaxed">
                 <p className={textColor}>

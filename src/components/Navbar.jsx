@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleScreenMode } from "../redux/modeSlice.js";
 import { useNavigate, useLocation } from "react-router-dom";
-import SEO from "../utils/SEO.jsx";
+// import SEO from "../utils/SEO.jsx";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,7 +60,7 @@ const Navbar = () => {
           : "bg-gradient-to-br from-[#f0faff] to-[#d9e9ff]"
       }`}
     > 
-      <SEO tittle={"Navbar"} description={"This is the Navbar"} />
+      {/* <SEO tittle={"Navbar"} description={"This is the Navbar"} /> */}
       <img
         className="h-20 w-auto"
         src={darkMode ? "/DarkLogo.gif" : "/LightLogo.gif"}

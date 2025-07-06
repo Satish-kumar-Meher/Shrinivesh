@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Bubbles } from "../../utils/Bubble";
-import SEO from "../../utils/SEO";
+// import SEO from "../../utils/SEO";
 
 const GraphStepUpSIP = ({ sipAmount, stepUpPercent, rate, years }) => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
@@ -59,7 +59,7 @@ const GraphStepUpSIP = ({ sipAmount, stepUpPercent, rate, years }) => {
 
   return (
     <section className={`relative mt-16 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
-      <SEO tittle={"StepUp sip Graph Page"} description={"This is the StepUp sip Graph page"} />
+      {/* <SEO tittle={"StepUp sip Graph Page"} description={"This is the StepUp sip Graph page"} /> */}
       <Bubbles darkMode={darkMode} />
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <motion.div
