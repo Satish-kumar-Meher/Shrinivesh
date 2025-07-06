@@ -29,14 +29,14 @@ const goals = [
       links:"/goals/retirement",
   },
   {
-    title: "Child's Education",
+    title: "Children's Education",
     image: "/Home/3.jpg",
     description:
       "Invest early for your child's bright educational future. Support their dreams with the right planning.",
       links:"/goals/child_education",
   },
   {
-    title: "Child's Wedding",
+    title: "Dream Wedding",
     image: "/Home/6.jpg",
     description:
       "Be financially prepared for your child’s big celebration. Make it memorable without financial stress.",

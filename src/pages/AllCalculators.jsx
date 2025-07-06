@@ -115,7 +115,7 @@ const calculatorDetails = [
 
 const logoMap = {
   "Become A Crorepati": "https://img.icons8.com/fluency/48/calculator.png",
-  "SIP Return Calculator": "https://img.icons8.com/fluent/64/0e6371/stack-of-coins.png",
+  "SIP Calculator": "https://img.icons8.com/fluent/64/0e6371/stack-of-coins.png",
   "Retirement Planning Calculator": "https://img.icons8.com/?size=100&id=114446&format=png&color=000000",
   "Asset Allocation Calculator": "https://img.icons8.com/fluent/64/0e6371/pie-chart.png",
   "EMI Calculator": "https://img.icons8.com/fluent/64/0e6371/money-transfer.png",
@@ -128,7 +128,7 @@ const logoMap = {
   "Compounding Calculator": "https://img.icons8.com/?size=100&id=121251&format=png&color=000000",
   "Spending Less Calculator": "https://img.icons8.com/fluent/64/0e6371/wallet.png",
   "Human Life Value Calculator": "https://img.icons8.com/?size=100&id=Ut1mhCuyFDJQ&format=png&color=000000",
-  "SIP Step Up Calculator": "https://img.icons8.com/?size=100&id=JF2ffIXzQqq8&format=png&color=000000",
+  "Step Up SIP Calculator": "https://img.icons8.com/?size=100&id=JF2ffIXzQqq8&format=png&color=000000",
 };
 
 const AllCalculators = () => {

@@ -127,6 +127,7 @@ const AboutUs = () => {
     : "hover:shadow-[0_0_25px_rgba(14,99,113,0.35)]";
 
     const border = darkMode ? "border-[#10e2ea]" : "border-[#0e6371]";
+    const specialColor = darkMode ? "text-lime-300" : "text-orange-500"
 
   return (
     <section className={`relative z-0 py-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}>
@@ -222,7 +223,7 @@ const AboutUs = () => {
                  <p className={textColor}>
                 🔹 Our Mission is to educate and empower individuals and families to make informed financial decisions that lead to security, dignity, and long-term fulfillment.
               </p>
-              <p className={textColor}>
+              <p className={`${textColor} `}>
                 With a focus on values, clarity, and personalized support, we aim to transform how people approach financial independence—with confidence and care.
               </p>
             </div>
@@ -252,9 +253,9 @@ const AboutUs = () => {
                   What sets us apart is not just our experience—but our commitment to values like honesty, simplicity, and personalization. We don’t sell products; we build relationships for life.
                   </p>
 
-                    <p className={textColor}>
-                   “सपने पूरे करने का रास्ता कठिन नहीं होता, बस सही दिशा में पहला कदम बढ़ाना होता है।”<br/>
-(The path to fulfilling dreams is not difficult; it simply begins with the first right step.)
+                    <p className={`${specialColor} lg:ml-[300px]`}>
+                   <span className="lg:ml-6">“सपने पूरे करने का रास्ता कठिन नहीं होता, बस सही दिशा में पहला कदम बढ़ाना होता है।”</span><br/>
+                  (The path to fulfilling dreams is not difficult; it simply begins with the first right step.)
                 </p>
               </div>
               {/* <div className="md:w-1/3 text-center">
