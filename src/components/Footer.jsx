@@ -386,9 +386,6 @@ import {
   FaLinkedinIn,
   FaDiscord,
   FaWhatsapp,
-  FaBolt,
-  FaXRay,
-  FaXing,
 } from "react-icons/fa";
 import { Bubbles } from "../utils/Bubble";
 // import SEO from "../utils/SEO";
@@ -417,26 +414,35 @@ const Footer = () => {
         { name: "About Us", path: "/about" },
         { name: "Contact Us", path: "/contact" },
         { name: "Services", path: "/services" },
-        { name: "Privacy Policy", path: "/" },
+        { name: "Privacy Policy", path: "/privacy_policy" },
+        {name: "Terms and Conditions" , path:"/terms_and_conditions"},
+        {name: "Disclaimer and Disclosures" , path:"/disclaimer"},
       ],
     },
+    {
+      title: "Mutual Fund Resources",
+      items: [
+        { name: "Investment Calculators", path: "/calculators" },
+        { name: "Blog", path: "/" },
+        { name: "News", path: "/" },
+        { name: " Financial Goal Planner", path: "/goals" },
+      ],
+    },
+    // {
+    //   title: "Goals",
+    //   items: [
+    //     { name: "Dream Home", path: "/goals/dream_home" },
+    //     { name: "Wealth Creation", path: "/goals/wealth_creation" },
+    //     { name: "Retirement", path: "/goals/retirement" },
+    //     { name: "Children's Education", path: "/goals/child_education" },
+    //     { name: "Dream Wedding", path: "/goals/child_wedding" },
+    //     { name: "Emergency", path: "/goals/emergency" },
+    //   ],
+    // },
     {
       title: "Useful Links",
       items: [
-        { name: "Tools and Calculators", path: "/calculators" },
-        { name: "Blog", path: "/" },
-        { name: "News", path: "/" },
-      ],
-    },
-    {
-      title: "Goals",
-      items: [
-        { name: "Dream Home", path: "/goals/dream_home" },
-        { name: "Wealth Creation", path: "/goals/wealth_creation" },
-        { name: "Retirement", path: "/goals/retirement" },
-        { name: "Children's Education", path: "/goals/child_education" },
-        { name: "Dream Wedding", path: "/goals/child_wedding" },
-        { name: "Emergency", path: "/goals/emergency" },
+        { name: "Links", path: "/useful_links" },
       ],
     },
   ];
@@ -567,7 +573,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <u>Satish.code.in</u>
+            <u>satish.code.in</u>
           </a>
         </p>
       </div>

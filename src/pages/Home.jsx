@@ -289,6 +289,7 @@ import AMCMarquee from '../components/Home/AMCMarquee';
 import AssetAllocation from '../components/Home/AssetAllocation';
 import { Bubbles } from '../utils/Bubble';
 import { useNavigate } from 'react-router';
+import TopMutualFunds from '../components/Home/TopMutualFunds';
 
 const slides = [
   {
@@ -504,6 +505,7 @@ const Home = () => {
       <CounterSection />
       <SecureSection />
       <InvestmentReturns />
+      <TopMutualFunds/>
       <AssetAllocation />
       <AMCMarquee />
     </>

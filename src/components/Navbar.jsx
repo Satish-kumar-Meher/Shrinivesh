@@ -569,7 +569,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <motion.div
-           className="w-6 h-6 rounded-full flex items-center justify-center text-yellow-500 dark:text-white bg-white dark:bg-gray-700 shadow"
+           className="w-6 h-6 rounded-full flex items-center cursor-pointer justify-center text-yellow-500 dark:text-white bg-white dark:bg-gray-700 shadow"
             animate={{ x: darkMode ? 24 : 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >

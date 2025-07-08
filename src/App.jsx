@@ -153,6 +153,10 @@ import EPFCalculator from './components/AllCalculators/EPFCalculator';
 import BecomeCrorepatiCalculator from './components/AllCalculators/CrorePatiCalculator';
 import RetirementCalculator from './components/AllCalculators/RetirementPlanningCalculator';
 import AssetAllocationCalculator from './components/AllCalculators/AssetAllocation';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import DisclaimerAndDisclosures from './pages/DisclaimerAndDisclosures';
+import UsefulLinks from './pages/UsefulLinks';
 // import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
@@ -165,6 +169,11 @@ const router = createBrowserRouter([
       { path: "/about", element: <AboutUs /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/privacy_policy", element: <PrivacyPolicy/> },
+      { path: "/terms_and_conditions", element: <TermsAndConditions/> },
+      { path: "/disclaimer", element: <DisclaimerAndDisclosures/> },
+      { path: "/useful_links", element: <UsefulLinks/> },
+
 
       { path: "/calculators", element: <AllCalculators /> },
       { path: "/calculators/sip_calculator", element: <MonthlySIPCalculator /> },
