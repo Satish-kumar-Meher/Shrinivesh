@@ -246,7 +246,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Bubbles } from "../utils/Bubble";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
-import { BookText, Newspaper, HelpCircle, Users, BarChart3 } from "lucide-react";
+import { BookText, Newspaper, HelpCircle, Users, BarChart3, PenToolIcon, PenTool } from "lucide-react";
 // import SEO from "../utils/SEO";
 
 const sections = [
@@ -279,6 +279,12 @@ const sections = [
     description: "Start your journey to financial freedom with proper planning.",
     icon: <BarChart3 size={32} />,
     route: "/financial-planning",
+  },
+  {
+    name: "SIP Tools",
+    description: "Start your journey to financial freedom with proper planning.",
+    icon: <PenTool size={32} />,
+    route: "/more/sip-tools",
   },
 ];
 

@@ -157,6 +157,10 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import DisclaimerAndDisclosures from './pages/DisclaimerAndDisclosures';
 import UsefulLinks from './pages/UsefulLinks';
+import SIPToolsCards from './components/more/SIPToolsCards';
+import SipTopUpTable from './components/more/SIPTopUpReadyReckoner';
+import SIPTopUpReadyReckoner from './components/more/SIPTopUpReadyReckoner';
+import SIPReadyReckoner from './components/more/SIPReadyReckoner';
 // import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
@@ -218,6 +222,9 @@ const router = createBrowserRouter([
         children: [
           { path: "mf_faqs", element: <MutualFundsFAQ /> },
           { path: "nri_faqs", element: <NriFaqs /> },
+          { path: "sip-tools", element: <SIPToolsCards /> },
+          { path: "sip-tools/sip_topup_ready_reckoner", element: <SIPTopUpReadyReckoner/> },
+          { path: "sip-tools/sip_ready_reckoner", element: <SIPReadyReckoner/> },
         ],
       },
     ],
