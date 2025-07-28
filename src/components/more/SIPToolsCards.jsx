@@ -22,7 +22,7 @@ const sipTools = [
     title: "Understanding Markets",
     desc: "This chart shows that as the investment horizon increases, the probability of losses reduce. You will see that in the 15 years period...",
     icon: "/icons/market.png",
-    link: "#",
+    link: "/more/sip-tools/understanding_markets",
   },
 ];
 
@@ -43,18 +43,19 @@ const SIPToolsCards = () => {
   const neonBorder = darkMode ? "#10e2ea" : "#0e6371";
 
   return (
-    <section
-      className={`relative py-20 px-4 w-full md:px-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}
-    >
+    // <section
+    //   className={`relative py-20 px-4 w-full md:px-20 overflow-hidden transition-colors duration-500 ${bgGradient}`}
+    // >
+    <>
       <Bubbles darkMode={darkMode} />
 
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="relative py-20 px-4 z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {sipTools.map((tool, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3 }}
-            className={`rounded-2xl p-6 backdrop-blur-md border-2 ${glassBg} ${textColor} shadow-lg`}
+            className={`rounded-2xl p-6 backdrop-blur-md border-1 ${glassBg} ${textColor} shadow-lg`}
             style={{
               borderColor: neonBorder,
               boxShadow: `0 0 15px ${neonBorder}, inset 0 0 20px ${neonBorder}55`,
@@ -85,7 +86,9 @@ const SIPToolsCards = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+      </>
+
+    // </section>
   );
 };
 
