@@ -379,53 +379,6 @@ const UnderstandingMarket = () => {
   const dataToRender = selectedIndex === 0 ? dataNifty : dataSensex;
   const labelToRender = selectedIndex === 0 ? "CNX NIFTY" : "BSE SENSEX";
 
-//   const renderTable = () => (
-//     <table className="w-full border-collapse text-sm md:text-xs text-center">
-//       <thead>
-//         <tr>
-//           <th className="p-2 font-semibold" rowSpan={2} style={{ border: `1px solid ${neonBorder}` }}>
-//             YEAR
-//           </th>
-//           <th className="p-2 font-semibold" rowSpan={2} style={{ border: `1px solid ${neonBorder}` }}>
-//             {labelToRender.toUpperCase()} LEVEL
-//           </th>
-//           <th className="p-2 font-semibold" colSpan={columns.length} style={{ border: `1px solid ${neonBorder}` }}>
-//             CAGR (%)
-//           </th>
-//         </tr>
-//         <tr>
-//           {columns.map((label, idx) => (
-//             <th key={idx} className="p-2 font-semibold text-[13px]" style={{ border: `1px solid ${neonBorder}` }}>
-//               {label}
-//             </th>
-//           ))}
-//         </tr>
-//       </thead>
-//       <tbody>
-//         {dataToRender.map((row, idx) => (
-//           <tr
-//             key={idx}
-//             className={clsx(idx % 2 === 0 ? "bg-white/10" : "bg-white/5", "transition-all hover:bg-white/20")}
-//           >
-//             <td className="p-2 font-medium text-left pl-4" style={{ border: `1px solid ${neonBorder}` }}>
-//               {row.year}
-//             </td>
-//             <td className="p-2 font-medium" style={{ border: `1px solid ${neonBorder}` }}>
-//               {row.value ? row.value.toLocaleString("en-IN") : "-"}
-//             </td>
-//             {columns.map((_, i) => (
-//               <td key={i} className="p-2" style={{ border: `1px solid ${neonBorder}` }}>
-//                 {row.cagr[i] || "-"}
-//               </td>
-//             ))}
-//           </tr>
-//         ))}
-//       </tbody>
-//     </table>
-//   );
-
-
-
 const renderTable = () => {
   const getBgColor = (val) => {
     if (isNaN(val)) return "transparent";
@@ -504,121 +457,6 @@ const renderTable = () => {
     </table>
   );
 };
-
-
-
-
-// const renderTable = () => {
-//   const getBgColorAndTextColor = (val) => {
-//     if (isNaN(val)) return { backgroundColor: "transparent", textColor: darkMode ? "#fff" : "#000" };
-
-//     const abs = Math.abs(val);
-//     let alpha = 0;
-
-//     if (abs < 5) alpha = 0;
-//     else if (abs < 10) alpha = 0.2;
-//     else if (abs < 15) alpha = 0.4;
-//     else if (abs < 20) alpha = 0.6;
-//     else if (abs < 30) alpha = 0.75;
-//     else alpha = 0.9;
-
-//     let backgroundColor = "";
-//     let textColor = "";
-
-//     if (val > 0) {
-//       // GREEN for positive values
-//       backgroundColor = `rgba(0, 255, 0, ${alpha})`;
-//       if (darkMode) {
-//         // In dark mode, green bg ⇒ darker text as alpha increases
-//         const darkness = Math.round((1 - alpha) * 255);
-//         textColor = `rgb(${darkness}, ${darkness}, ${darkness})`;
-//       } else {
-//         // In light mode, green bg ⇒ keep text black
-//         textColor = "#000";
-//       }
-//     } else {
-//       // RED for negative values
-//       backgroundColor = `rgba(255, 0, 0, ${alpha})`;
-//       if (darkMode) {
-//         // In dark mode, red bg ⇒ keep text white
-//         textColor = "#fff";
-//       } else {
-//         // In light mode, red bg ⇒ lighter text as red increases
-//         const lightness = Math.round((1 - alpha) * 255);
-//         textColor = `rgb(${lightness}, ${lightness}, ${lightness})`;
-//       }
-//     }
-
-//     return { backgroundColor, textColor };
-//   };
-
-//   return (
-//     <table className="w-full border-collapse text-sm md:text-xs text-center">
-//       <thead>
-//         <tr>
-//           <th className="p-2 font-semibold" rowSpan={2} style={{ border: `1px solid ${neonBorder}` }}>
-//             YEAR
-//           </th>
-//           <th className="p-2 font-semibold" rowSpan={2} style={{ border: `1px solid ${neonBorder}` }}>
-//             {labelToRender.toUpperCase()} LEVEL
-//           </th>
-//           <th className="p-2 font-semibold" colSpan={columns.length} style={{ border: `1px solid ${neonBorder}` }}>
-//             CAGR (%)
-//           </th>
-//         </tr>
-//         <tr>
-//           {columns.map((label, idx) => (
-//             <th key={idx} className="p-2 font-semibold text-[13px]" style={{ border: `1px solid ${neonBorder}` }}>
-//               {label}
-//             </th>
-//           ))}
-//         </tr>
-//       </thead>
-//       <tbody>
-//         {dataToRender.map((row, idx) => (
-//           <tr
-//             key={idx}
-//             className={clsx(idx % 2 === 0 ? "bg-white/10" : "bg-white/5", "transition-all hover:bg-white/20")}
-//           >
-//             <td className="p-2 font-medium text-left pl-4" style={{ border: `1px solid ${neonBorder}` }}>
-//               {row.year}
-//             </td>
-//             <td className="p-2 font-medium" style={{ border: `1px solid ${neonBorder}` }}>
-//               {row.value ? row.value.toLocaleString("en-IN") : "-"}
-//             </td>
-//             {columns.map((_, i) => {
-//               const rawValue = row.cagr[i];
-//               const parsed = rawValue?.replace("‑", "-").replace("%", "");
-//               const numericValue = parseFloat(parsed);
-//               const { backgroundColor, textColor } = getBgColorAndTextColor(numericValue);
-
-//               return (
-//                 <td
-//                   key={i}
-//                   className="p-2"
-//                   style={{
-//                     border: `1px solid ${neonBorder}`,
-//                     backgroundColor,
-//                     color: textColor,
-//                     fontWeight: "500",
-//                   }}
-//                 >
-//                   {rawValue || "-"}
-//                 </td>
-//               );
-//             })}
-//           </tr>
-//         ))}
-//       </tbody>
-//     </table>
-//   );
-// };
-
-
-
-
-
-
 
   return (
     <div className={`relative w-full py-16 px-4 md:px-20 transition-colors duration-500 ${bgGradient}`}>
@@ -720,4 +558,12 @@ const renderTable = () => {
 };
 
 export default UnderstandingMarket;
+
+
+
+
+
+
+
+
 
