@@ -5,7 +5,6 @@ import { Plus, Minus } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
 // import SEO from "../../utils/SEO";
 
-
 const faqs = [
   {
     question: "What are the types of mutual funds?",
@@ -13,7 +12,8 @@ const faqs = [
       "Broadly there are two types of mutual fund categories: Equity & Debt. There are various combinations of these two categories that create hybrid funds.",
   },
   {
-    question: "Why are mutual fund investments better than other investment products?",
+    question:
+      "Why are mutual fund investments better than other investment products?",
     answer:
       "Mutual funds offer diversification, professional management, and flexibility — often with lower costs compared to directly managing a portfolio.",
   },
@@ -38,7 +38,8 @@ const faqs = [
       "Returns depend on market performance and fund selection. Historically, equity funds deliver higher returns over the long term.",
   },
   {
-    question: "Can I plan to save for my future financial goals using mutual funds?",
+    question:
+      "Can I plan to save for my future financial goals using mutual funds?",
     answer:
       "Absolutely. Mutual funds are ideal for long-term goals like retirement, education, and buying a home through disciplined investing.",
   },
@@ -71,8 +72,8 @@ const MutualFundsFAQ = () => {
   return (
     <section
       className={`relative z-0 min-h-screen px-4 py-20 sm:px-8 md:px-12 lg:px-20 ${bgGradient} transition-colors duration-500`}
-    > 
-              {/* <SEO tittle={"Mutual Funds FAQ Page"} description={"This is the Mutual Funds FAQ page"} /> */}
+    >
+      {/* <SEO tittle={"Mutual Funds FAQ Page"} description={"This is the Mutual Funds FAQ page"} /> */}
       <Bubbles darkMode={darkMode} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center mb-16">

@@ -378,6 +378,7 @@ const UnderstandingMarket = () => {
 
   const dataToRender = selectedIndex === 0 ? dataNifty : dataSensex;
   const labelToRender = selectedIndex === 0 ? "CNX NIFTY" : "BSE SENSEX";
+  const headingToRender = selectedIndex === 0 ? "Nifty" : "Sensex";
 
 const renderTable = () => {
   const getBgColor = (val) => {
@@ -491,7 +492,7 @@ const renderTable = () => {
               Understanding Markets - {labelToRender}
             </h1>
             <p className="text-sm sm:text-base md:text-lg font-medium tracking-wide opacity-85">
-              Historical CAGR based on Nifty Index
+              Historical CAGR based on {headingToRender} Index
             </p>
           </div>
 

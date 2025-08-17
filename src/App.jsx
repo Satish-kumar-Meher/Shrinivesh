@@ -163,6 +163,9 @@ import SIPTopUpReadyReckoner from './components/more/SIPTopUpReadyReckoner';
 import SIPReadyReckoner from './components/more/SIPReadyReckoner';
 import UnderstandingMarkets from './components/more/UnderstandingMarkets';
 import SIPvsSIPTopUp from './components/more/SipVsSipTopUp';
+import WhyStartSIPEarlyPage from './components/more/WhyStartSipEarly';
+import Lenis from '@studio-freight/lenis'
+import { useEffect } from 'react';
 // import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
@@ -228,7 +231,8 @@ const router = createBrowserRouter([
           { path: "sip-tools/sip_topup_ready_reckoner", element: <SIPTopUpReadyReckoner/> },
           { path: "sip-tools/sip_ready_reckoner", element: <SIPReadyReckoner/> },
           { path: "sip-tools/understanding_markets", element: <UnderstandingMarkets/> },  
-          { path: "sip-tools/sip_vs_sip_topup", element: <SIPvsSIPTopUp/> }
+          { path: "sip-tools/sip_vs_sip_topup", element: <SIPvsSIPTopUp/> },  
+           { path: "sip-tools/why_start_sip_early", element: <WhyStartSIPEarlyPage/> }
         ],
       },
     ],
@@ -236,6 +240,26 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
+  useEffect(() => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+
   return(
 
     <>

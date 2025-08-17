@@ -173,13 +173,13 @@ const UsefulLinks = () => {
     {
       title: "🛠️ Mutual Fund Platforms & Services",
       links: [
-        { name: "MF Utilities (MFU)", url: "https://www.mfuindia.com" },
-        { name: "CVL KRA", url: "https://www.cvlkra.com" },
-        { name: "NDML KRA", url: "https://kra.ndml.in" },
-        { name: "CAMS KRA", url: "https://www.camsonline.com" },
-        { name: "Karvy KRA", url: "https://www.karvykra.com" },
+        { name: "MF Utilities (MFU)", url: "https://mfuonline.com" },
+        { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
+        { name: "NDML KRA", url: "https://kra.ndml.in/kra/ckyc/#/initiate" },
+        { name: "CAMS KRA", url: " https://camskra.com/PanDetailsUpdate.aspx" },
+        { name: "Karvy KRA", url: " https://www.karvykra.com/KYC_Validation/Default.aspx" },
         { name: "DOTEX KRA (NSDL)", url: "https://kra.ndml.in" },
-        { name: "Check Your KYC Status (Karvy)", url: "https://www.karvykra.com/karvykra/kycstatus.aspx" },
+        { name: "Check Your KYC Status (Karvy)", url: "https://karvykra.com/UPanSearchGlobalWithPanExempt.aspx" },
       ],
     },
     {
@@ -187,14 +187,14 @@ const UsefulLinks = () => {
       links: [
         { name: "SEBI – Securities and Exchange Board of India", url: "https://www.sebi.gov.in" },
         { name: "NISM – National Institute of Securities Markets", url: "https://www.nism.ac.in" },
-        { name: "RBI – Reserve Bank of India", url: "https://www.rbi.org.in" },
-        { name: "IRDAI – Insurance Regulatory and Development Authority of India", url: "https://www.irdai.gov.in" },
+        { name: "RBI – Reserve Bank of India", url: "https://website.rbi.gov.in/en" },
+        { name: "IRDAI – Insurance Regulatory and Development Authority of India", url: "https://irdai.gov.in/home" },
       ],
     },
     {
       title: "📈 Market Exchanges",
       links: [
-        { name: "NSE – National Stock Exchange", url: "https://www.nseindia.com" },
+        { name: "NSE – National Stock Exchange", url: "https://www.nsekra.com" },
         { name: "BSE – Bombay Stock Exchange", url: "https://www.bseindia.com" },
         { name: "MCX – Multi Commodity Exchange", url: "https://www.mcxindia.com" },
       ],
@@ -203,17 +203,17 @@ const UsefulLinks = () => {
     {
       title: "🧍 KYC, Aadhaar & PAN Services",
       links: [
-        { name: "UIDAI – Aadhaar Portal", url: "https://uidai.gov.in" },
-        { name: "Get e-Aadhaar", url: "https://eaadhaar.uidai.gov.in" },
-        { name: "Apply for PAN Card", url: "https://www.onlineservices.nsdl.com/paam" },
-        { name: "Get e-PAN (NSDL)", url: "https://www.incometax.gov.in/iec/foportal" },
+        { name: "UIDAI – Aadhaar Portal", url: "https://uidai.gov.in/en" },
+        { name: "Get e-Aadhaar", url: "https://myaadhaar.uidai.gov.in/genricDownloadAadhaar/en" },
+        { name: "Apply for PAN Card", url: "https://onlineservices.nsdl.com/paam/endUserRegisterContact.html" },
+        { name: "Get e-PAN (NSDL)", url: "https://onlineservices.nsdl.com/paam/requestAndDownloadEPAN.html" },
       ],
     },
     {
       title: "💰 Taxation & Retirement",
       links: [
-        { name: "Income Tax India", url: "https://www.incometax.gov.in" },
-        { name: "NPS – National Pension System", url: "https://enps.nsdl.com" },
+        { name: "Income Tax India", url: "https://incometaxindia.gov.in" },
+        { name: "NPS – National Pension System", url: "https://npstrust.org.in" },
       ],
     },
   ];

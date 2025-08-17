@@ -25,10 +25,16 @@ const sipTools = [
     link: "/more/sip-tools/understanding_markets",
   },
     {
-    title: "SIP VS SIP Top Up",
+    title: "SIP vs SIP Top Up",
     desc: "This chart shows that as the investment horizon increases, the probability of losses reduce. You will see that in the 15 years period...",
     icon: "/icons/market.png",
     link: "/more/sip-tools/sip_vs_sip_topup",
+  },
+  {
+    title: "Why Start SIP Early",
+    desc: "This chart shows that as the investment horizon increases, the probability of losses reduce. You will see that in the 15 years period...",
+    icon: "/icons/market.png",
+    link: "/more/sip-tools/why_start_sip_early",
   },
 ];
 
