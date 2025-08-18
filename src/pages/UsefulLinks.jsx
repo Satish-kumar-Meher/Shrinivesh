@@ -201,7 +201,7 @@ const UsefulLinks = () => {
       links: [
         { name: "SEBI – Securities and Exchange Board of India", url: "https://www.sebi.gov.in" },
         { name: "NISM – National Institute of Securities Markets", url: "https://www.nism.ac.in" },
-        { name: "RBI – Reserve Bank of India", url: "https://website.rbi.gov.in/en" },
+        { name: "RBI – Reserve Bank of India", url: "https://website.rbi.org.in/en/web/rbi" },
         { name: "IRDAI – Insurance Regulatory and Development Authority of India", url: "https://irdai.gov.in/home" },
       ],
     },
