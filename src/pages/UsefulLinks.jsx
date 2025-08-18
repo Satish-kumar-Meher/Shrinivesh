@@ -168,20 +168,34 @@ const UsefulLinks = () => {
         { name: "SEBI Investor Awareness Website", url: "https://investor.sebi.gov.in" },
         { name: "Mutual Funds Sahi Hai", url: "https://www.mutualfundssahihai.com" },
         { name: "AMFI – Association of Mutual Funds in India", url: "https://www.amfiindia.com" },
+        { name: "NSE Investor Education", url: " https://nseindia.com/invest/investors-home" },
+        { name: "IEPFA", url: "https://IEPFA.gov.in/login" },
       ],
     },
     {
       title: "🛠️ Mutual Fund Platforms & Services",
       links: [
         { name: "MF Utilities (MFU)", url: "https://mfuonline.com" },
-        { name: "CVL KRA", url: "https://validate.cvlindia.com/CVLKRAVerification_V1" },
-        { name: "NDML KRA", url: "https://kra.ndml.in/kra/ckyc/#/initiate" },
-        { name: "CAMS KRA", url: " https://camskra.com/PanDetailsUpdate.aspx" },
-        { name: "Karvy KRA", url: " https://www.karvykra.com/KYC_Validation/Default.aspx" },
-        { name: "DOTEX KRA (NSDL)", url: "https://kra.ndml.in" },
+        { name: "NSE NMF", url: "https://nsenmf.com" },
         { name: "Check Your KYC Status (Karvy)", url: "https://karvykra.com/UPanSearchGlobalWithPanExempt.aspx" },
+        { name: "CAMS", url: " https://camsonline.com" },
+        { name: "KFINTECH", url: " https://mfs.kfintech.com/dit/login" },
       ],
     },
+
+
+    {
+      title: "Validate KYC",
+      links: [
+        { name: "CVL KRA", url: " https://validate.cvlindia.com/CVLKRAVerification_V1" },
+        { name: "NDML KRA", url: "https://kra.ndml.in/kra/ckyc/#/initiate" },
+        { name: "CAMS KRA", url: "https://camskra.com/PanDetailsUpdate.aspx" },
+        { name: "KARVY KRA", url: "https://www.karvykra.com/KYC_Validation/Default.aspx" },
+        { name: "NSE KRA", url: " https://www.nsekra.com" },
+      ],
+    },
+
+
     {
       title: "🧾 Regulatory Bodies & Framework",
       links: [
@@ -197,6 +211,7 @@ const UsefulLinks = () => {
         { name: "NSE – National Stock Exchange", url: "https://www.nsekra.com" },
         { name: "BSE – Bombay Stock Exchange", url: "https://www.bseindia.com" },
         { name: "MCX – Multi Commodity Exchange", url: "https://www.mcxindia.com" },
+        { name: "NCDEX - National Commodity & Derivatives Exchange Limited", url: "https://ncdex.com" },
       ],
     },
     
