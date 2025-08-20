@@ -5,10 +5,12 @@ import Footer from './Footer'
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
-// import SEO from '../utils/SEO';
+import SEO from '../utils/SEO';
+import { useLocation } from 'react-router';
 
 
 function AppLayout() {
+  const location = useLocation()
 
   useEffect(() => {
   const cursor = document.getElementById("cursor");
@@ -36,7 +38,7 @@ window.addEventListener("mouseup", () => {
   return (
     <>
   <Navbar/>
-  {/* <SEO tittle={"Main App Layout"} description={"This is the Main App Layout"} /> */}
+  <SEO path={location.pathname} />
     {/* Glowing Cursor */}
 <motion.div
   className="cursor-glow"
