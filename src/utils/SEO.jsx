@@ -58,6 +58,9 @@ function setOpenGraph(meta) {
   if (meta.url) setMetaByProperty('og:url', meta.url)
   if (meta.type) setMetaByProperty('og:type', meta.type)
   if (meta.image) setMetaByProperty('og:image', meta.image)
+  if (meta.siteName) setMetaByProperty('og:site_name', meta.siteName)
+  if (meta.locale) setMetaByProperty('og:locale', meta.locale)
+  if (meta.imageAlt) setMetaByProperty('og:image:alt', meta.imageAlt)
 }
 
 function setJsonLd(jsonLd) {
@@ -82,6 +85,8 @@ function SEO({ path, title, description, image, noindex = false, jsonLd }) {
     const canonicalUrl = conf.canonical ? conf.canonical : new URL(normalizedPath || '/', baseSiteUrl).toString()
     const rawImage = image || conf.image || '/Logo1.jpg'
     const absoluteOgImage = /^https?:\/\//i.test(rawImage) ? rawImage : new URL(rawImage, baseSiteUrl).toString()
+    const siteName = 'Shri Nivesh'
+    const locale = 'en_IN'
 
     document.title = pageTitle
     setMetaByName('description', pageDescription)
@@ -94,6 +99,9 @@ function SEO({ path, title, description, image, noindex = false, jsonLd }) {
       url: canonicalUrl,
       type: conf.ogType || 'website',
       image: absoluteOgImage,
+      siteName,
+      locale,
+      imageAlt: pageTitle,
     })
 
     setTwitterCard({
@@ -103,8 +111,53 @@ function SEO({ path, title, description, image, noindex = false, jsonLd }) {
       card: 'summary_large_image',
       site: '@shrinivesh',
     })
+    setMetaByName('twitter:image:alt', pageTitle)
 
-    setJsonLd(jsonLd || conf.jsonLd)
+    // Build default JSON-LD if none provided in props/config
+    const jsonList = []
+
+    if (conf.jsonLd) jsonList.push(conf.jsonLd)
+    if (jsonLd) jsonList.push(jsonLd)
+
+    const webPage = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: pageTitle,
+      description: pageDescription,
+      url: canonicalUrl,
+    }
+    jsonList.push(webPage)
+
+    const segments = (normalizedPath || '/')
+      .split('/')
+      .filter(Boolean)
+    if (segments.length > 0) {
+      const breadcrumb = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: segments.map((seg, idx) => {
+          const itemPath = '/' + segments.slice(0, idx + 1).join('/')
+          return {
+            '@type': 'ListItem',
+            position: idx + 1,
+            name: seg.replace(/[-_]/g, ' '),
+            item: new URL(itemPath, baseSiteUrl).toString(),
+          }
+        })
+      }
+      jsonList.push(breadcrumb)
+    }
+
+    const organization = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: siteName,
+      url: baseSiteUrl,
+      logo: new URL('/Logo.png', baseSiteUrl).toString(),
+    }
+    jsonList.push(organization)
+
+    setJsonLd(jsonList)
   }, [path, title, description, image, noindex, jsonLd])
 
   return null

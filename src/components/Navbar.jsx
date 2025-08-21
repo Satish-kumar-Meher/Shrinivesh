@@ -463,7 +463,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleScreenMode } from "../redux/modeSlice.js";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -498,6 +498,10 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  const handleLoginClick = () => {
+    window.open('https://invest.shrinivesh.com', '_blank');
+  };
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -528,10 +532,10 @@ const Navbar = () => {
 
       <div className="hidden lg:flex gap-4 xl:gap-6 items-center flex-wrap">
         {navItems.map((item) => (
-          <a
+          <Link
             key={item.name}
-            onClick={() => handleLinkClick(item.link)}
-            className={`flex items-center gap-1 px-3 py-2 text-sm rounded-full font-medium transition-all duration-300 cursor-pointer hover:scale-105 whitespace-nowrap ${
+            to={item.link}
+            className={`flex items-center gap-1 px-3 py-2 text-sm rounded-full font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap ${
               isActive(item.link) ? "scale-105" : ""
             }`}
             style={{
@@ -556,9 +560,10 @@ const Navbar = () => {
                 ? "#fff"
                 : "#111";
             }}
+            aria-label={item.name}
           >
             {item.icon} {item.name}
-          </a>
+          </Link>
         ))}
 
         <motion.button
@@ -578,6 +583,7 @@ const Navbar = () => {
         </motion.button>
 
         <button
+          onClick={handleLoginClick}
           style={{ backgroundColor: loginBgColor }}
           className={`px-4 py-2 rounded-full font-semibold shadow-md transition-all duration-300 hover:scale-105 ${loginTextColor}`}
         >
@@ -624,9 +630,10 @@ const Navbar = () => {
             }`}
           >
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                onClick={() => handleLinkClick(item.link)}
+                to={item.link}
+                onClick={() => setMenuOpen(false)}
                 className="flex items-center gap-2 px-3 py-2 rounded-md transition hover:scale-105"
                 style={{
                   backgroundColor: isActive(item.link) ? accentColor : "transparent",
@@ -650,12 +657,14 @@ const Navbar = () => {
                     ? "#fff"
                     : "#111";
                 }}
+                aria-label={item.name}
               >
                 {item.icon} {item.name}
-              </a>
+              </Link>
             ))}
 
             <button
+              onClick={handleLoginClick}
               style={{ backgroundColor: loginBgColor }}
               className={`px-4 py-2 rounded-full font-semibold hover:scale-105 transition ${loginTextColor}`}
             >

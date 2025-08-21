@@ -374,7 +374,7 @@
 
 
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -448,13 +448,13 @@ const Footer = () => {
   ];
 
   const socialIcons = [
-    { icon: <FaFacebookF />, link: "https://facebook.com", color: "#1877F2" },
-    { icon: <FaInstagram />, link: "https://www.instagram.com/shri_nivesh/", color: "#E1306C" },
-    { icon: <FaYoutube />, link: "https://www.youtube.com/@Shri_Nivesh?sub_confirmation=1", color: "#FF0000" },
-    { icon: <FaTwitter />, link: "https://x.com/intent/follow?screen_name=Shri_Nivesh", color: "#1DA1F2" },
-    // { icon: <FaLinkedinIn />, link: "https://linkedin.com", color: "#0A66C2" },
-    // { icon: <FaDiscord />, link: "https://discord.com", color: "#5865F2" },
-    { icon: <FaWhatsapp />, link: "https://wa.me/919348112495?text=Hi%2C%0AI%E2%80%99m%20looking%20to%20start%20my%20Mutual%20Fund%20investment%20journey%20and%20would%20love%20to%20do%20it%20under%20your%20expert%20guidance", color: "#25D366" },
+    { name: "Facebook", icon: <FaFacebookF />, link: "https://facebook.com", color: "#1877F2" },
+    { name: "Instagram", icon: <FaInstagram />, link: "https://www.instagram.com/shri_nivesh/", color: "#E1306C" },
+    { name: "YouTube", icon: <FaYoutube />, link: "https://www.youtube.com/@Shri_Nivesh?sub_confirmation=1", color: "#FF0000" },
+    { name: "Twitter", icon: <FaTwitter />, link: "https://x.com/intent/follow?screen_name=Shri_Nivesh", color: "#1DA1F2" },
+    // { name: "LinkedIn", icon: <FaLinkedinIn />, link: "https://linkedin.com", color: "#0A66C2" },
+    // { name: "Discord", icon: <FaDiscord />, link: "https://discord.com", color: "#5865F2" },
+    { name: "WhatsApp", icon: <FaWhatsapp />, link: "https://wa.me/919348112495?text=Hi%2C%0AI%E2%80%99m%20looking%20to%20start%20my%20Mutual%20Fund%20investment%20journey%20and%20would%20love%20to%20do%20it%20under%20your%20expert%20guidance", color: "#25D366" },
   ];
 
 
@@ -504,12 +504,14 @@ const Footer = () => {
                 </h4>
                 <ul className="space-y-2 text-sm">
                   {section.items.map((item) => (
-                    <li
-                      key={item.name}
-                      onClick={() => navigate(item.path)}
-                      className={`transition-all duration-300 ${textColor} ${linkHover} hover:translate-x-1 cursor-pointer`}
-                    >
-                      {item.name}
+                    <li key={item.name}>
+                      <Link
+                        to={item.path}
+                        className={`transition-all duration-300 ${textColor} ${linkHover} hover:translate-x-1`}
+                        aria-label={item.name}
+                      >
+                        {item.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -537,7 +539,7 @@ const Footer = () => {
 
           <h4 className={`font-semibold text-lg mb-3 ${headingColor}`}>Follow Us</h4>
           <div className="flex flex-wrap gap-3">
-            {socialIcons.map(({ icon, link, color }, i) => (
+            {socialIcons.map(({ name, icon, link, color }, i) => (
               <motion.a
                 key={i}
                 href={link}
@@ -551,6 +553,7 @@ const Footer = () => {
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 style={{ color }}
+                aria-label={name}
               >
                 {icon}
               </motion.a>
