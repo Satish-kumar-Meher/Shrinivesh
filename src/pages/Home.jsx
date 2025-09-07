@@ -293,67 +293,67 @@ import TopMutualFunds from '../components/Home/TopMutualFunds';
 
 const slides = [
   {
-    title: "Secure Your Future.",
-    highlight: "Live Your Dreams.",
+    title: "Start Small. Grow Big.",
+    highlight: "Secure Your Dream Home with SIP",
     description:
-      "The best time to plan your retirement was yesterday. The next best time is now.At Shri Nivesh, we help you create a custom retirement plan that ensures you don’t just retire — you retire rich, stress-free, and independent.",
-    buttonText: "Plan Retirement",
-    image: "/Home/1.jpg",
-    links: "/goals/retirement",
+      "A Systematic Investment Plan helps you build wealth step by step. Investing small amounts regularly can make your dream home a reality with steady, disciplined growth. Begin today and move closer to owning the home you deserve.",
+    buttonText: "Plan Dream Home",
+    image: "/Home/7.jpg",
+    links: "/goals/dream_home",
   },
   {
-    title: "Start early to fuel their",
-    highlight: "dreams with confidence.",
+    title: "Plan Early.",
+    highlight: "Build a Strong Future for Your Children",
     description:
-      "Education costs are rising fast. Smart mutual fund investments can help you build a solid education fund for your child. Start now and let compounding do the heavy lifting.",
+      "Education costs are rising every year. Smart mutual fund investments can create a reliable education corpus for your children. Start early and let compounding work for you so that nothing stands in the way of their bright future.",
     buttonText: "Plan Child's Education",
     image: "/Home/3.jpg",
     links: "/goals/child_education",
   },
   {
-    title: "The most precious gift?",
-    highlight: "Their dream wedding.",
+    title: "Protect What Matters Most",
+    highlight: "with Life Insurance",
     description:
-      "Your child’s wedding is a milestone moment. Don’t let lack of funds limit their big day. With smart financial planning, you can turn their dreams into reality.",
-    buttonText: "Plan Child's Wedding",
-    image: "/Home/6.jpg",
-    links: "/goals/child_wedding",
-  },
-  {
-    title: "Start Small. Grow Big.",
-    highlight: "Secure Your Future with SIP.",
-    description:
-      "A SIP (Systematic Investment Plan) lets you invest small amounts regularly — making wealth creation simple, steady, and stress-free.✨ Build long-term wealth✨ Easy to start, easy to manage✨ Perfect for financial freedom",
-    buttonText: "Dream Home",
-    image: "/Home/7.jpg",
-    links: "/goals/dream_home",
-  },
-  {
-    title: "Build lasting wealth through smart investing",
-    highlight: "and consistent planning.",
-    description:
-      "Wealth doesn't happen by chance—it’s built with patience, purpose, and the power of compounding. Start investing regularly in mutual funds and watch your financial goals come closer, one SIP at a time.",
-    buttonText: "Plan Wealth Creation",
-    image: "/Home/5.jpg",
-    links: "/goals/wealth_creation",
-  },
-  {
-    title: "Secure your family's future",
-    highlight: " with trusted life insurance.",
-    description:
-      "Life is unpredictable—but your family's financial future shouldn't be. A smart life insurance plan offers peace of mind, long-term stability, and protection when it matters the most. Shield your loved ones today from life’s uncertainties with future-ready coverage.",
+      "Life is uncertain, but financial security for your family should not be. A trusted life insurance plan provides peace of mind, long-term stability, and financial protection when your loved ones need it the most.",
     buttonText: "Plan Life Insurance",
     image: "/Home/8.jpg",
     links: "/goals/life_insurance",
   },
   {
-    title: "Protect your health and savings",
-    highlight: "with a trusted health insurance plan.",
+    title: "Plan Today for Their",
+    highlight: "Perfect Wedding Tomorrow",
     description:
-      "Rising medical costs shouldn’t be a burden. With the right health insurance, you get reliable coverage, cashless treatment, and peace of mind for you and your family. Stay protected against unexpected health emergencies—secure your future today.",
+      "Every parent dreams of seeing their child step into a new journey with grace and joy. A well-planned wedding fund ensures the celebration is as beautiful as the dream itself.",
+    buttonText: "Plan Dream Wedding",
+    image: "/Home/6.jpg",
+    links: "/goals/child_wedding",
+  },
+  {
+    title: "Secure Your Health and Wealth",
+    highlight: "with Trusted Insurance",
+    description:
+      "Medical expenses are unpredictable, but the right health insurance protects your family's savings. Get reliable coverage, cashless treatment, and financial peace of mind with a plan designed for today and tomorrow.",
     buttonText: "Plan Health Insurance",
     image: "/Home/4.jpg",
     links: "/goals/health_insurance",
+  },
+  {
+    title: "Build Lasting Wealth",
+    highlight: "with Smart Investments",
+    description:
+      "Wealth is created through discipline, patience, and consistent investing. Mutual funds and SIPs help you grow steadily and achieve financial freedom. Start investing today and let compounding work in your favor.",
+    buttonText: "Plan Wealth Creation",
+    image: "/Home/5.jpg",
+    links: "/goals/wealth_creation",
+  },
+  {
+    title: "Secure Your Future.",
+    highlight: "Live Your Retirement Dreams",
+    description:
+      "Retirement planning is about more than just savings. With Shri Nivesh, create a personalized retirement plan that ensures financial independence, stability, and the lifestyle you have always envisioned.",
+    buttonText: "Plan Retirement",
+    image: "/Home/1.jpg",
+    links: "/goals/retirement",
   },
 ];
 

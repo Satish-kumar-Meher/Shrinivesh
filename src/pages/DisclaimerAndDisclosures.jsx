@@ -59,7 +59,7 @@ const DisclaimerAndDisclosures = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4">
         <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} transition-transform hover:scale-[1.02]`}>
-          <h2 className={`text-3xl sm:text-4xl font-bold mb-6 text-center ${highlight}`}>🔒 Disclaimer & Disclosures</h2>
+          <h2 className={`text-4xl sm:text-5xl font-bold mb-6 text-center ${highlight}`}>🔒 Disclaimer & Disclosures</h2>
           <p className={`text-sm sm:text-base mb-2 ${textColor}`}>Effective Date: July 7, 2025</p>
           <p className={`text-sm sm:text-base mb-6 ${textColor}`}>Last Updated: July 7, 2025</p>
 

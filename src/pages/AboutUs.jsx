@@ -171,7 +171,7 @@ const AboutUs = () => {
       <div className={`relative  z-10 max-w-7xl mx-auto px-4 space-y-20`}>
         {/* Section 1: Intro */}
         <div>
-          <h2 className={`text-3xl sm:text-4xl font-bold mt-7  mb-6 ${highlight}`}>About Us</h2>
+          <h2 className={`text-4xl sm:text-5xl font-bold mt-7  mb-6 ${highlight}`}>About Us</h2>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
             <div className="flex flex-col-reverse md:flex-row items-center gap-8">
               <div className="md:w-1/2">
@@ -211,7 +211,7 @@ const AboutUs = () => {
         {/* Section 2: Vision & Mission */}
         <div>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
-            <h3 className={`text-4xl font-bold mb-6 text-center ${highlight}`}>Vision & Mission</h3>
+            <h3 className={`text-4xl sm:text-5xl font-bold mb-6 text-center ${highlight}`}>Vision & Mission</h3>
              <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor}  `}>Guiding You Towards a Financially Secure Tomorrow</h4>
             <div className="space-y-6 text-center text-sm sm:text-base leading-relaxed px-2 sm:px-10 lg:px-24">
               <p className={textColor}>
@@ -233,7 +233,7 @@ const AboutUs = () => {
         {/* Section 3: Founder Profile */}
         <div>
           <div className={`rounded-3xl p-6 md:p-10 border ${border} ${cardGlass} ${innerGlow} ${outerGlow} border transition-transform hover:scale-[1.02] ${darkMode ? "border-[#1de0e6]/20" : "border-[#0e6371]/10"}`}>
-            <h3 className={`text-4xl font-bold mb-6 text-center ${textColor} `}>Our <span className={highlight}>Leadership Philosophy</span></h3>
+            <h3 className={`text-4xl sm:text-5xl font-bold mb-6 text-center ${textColor} `}>Our <span className={highlight}>Leadership Philosophy</span></h3>
             <h4 className={`text-2xl font-bold mb-6 text-center ${secTextColor} `}>Driven by Knowledge, Guided by Values</h4>
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className=" space-y-4 text-sm sm:text-base leading-relaxed">

@@ -164,7 +164,7 @@ const AllCalculators = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-3xl mt-10 sm:text-4xl font-bold ${textColor}`}
+          className={`text-4xl mt-10 sm:text-5xl font-bold ${textColor}`}
         >
           Explore Our <span className={highlight}>Free & Smart Financial Calculators</span>
         </motion.h2>

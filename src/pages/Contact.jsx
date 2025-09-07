@@ -62,7 +62,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className={`text-3xl sm:text-4xl font-bold ${textColor}`}>
+          <h2 className={`text-4xl sm:text-5xl font-bold ${textColor}`}>
             <span className={highlight}> Contact</span> Us
           </h2>
           <p className={`text-xl font-semibold ${textColor}`}>
