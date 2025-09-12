@@ -4,12 +4,11 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Bubbles } from "../../utils/Bubble";
-// import { configDotenv } from "dotenv";
-// import dotenv from "dotenv"
-// dotenv.config()
+import { useNavigate } from "react-router-dom";
 
 const LatestNews = () => {
   const { mode: darkMode } = useSelector((state) => state.screenMode);
+  const navigate = useNavigate();
   const [newsList, setNewsList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,9 +32,8 @@ const LatestNews = () => {
   const subTextColor = darkMode ? "text-gray-300" : "text-gray-600";
   const primaryText = darkMode ? "text-[#10e2ea]" : "text-[#0e6371]";
 
-  // const apiKey = process.env.NEWS_API_KEY;
 
-  const apiKey = "cbf2ee78ad4541568a5edf22b78e5460"
+  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -117,6 +115,7 @@ const LatestNews = () => {
         <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
           <h2 className={`text-3xl sm:text-4xl font-bold ${textColor}`}>Latest News</h2>
           <button
+            onClick={() => navigate('/news')}
             className={`px-5 py-2 text-sm font-semibold rounded-full ${primaryText} border border-current hover:opacity-80 transition`}
           >
             View All

@@ -8,6 +8,7 @@ import SecureSection from '../components/Home/SecureSection';
 import InvestmentReturns from '../components/Home/InvestmentCalc';
 import AMCMarquee from '../components/Home/AMCMarquee';
 import AssetAllocation from '../components/Home/AssetAllocation';
+import LatestNews from '../components/Home/LatestNews';
 import { Bubbles } from '../utils/Bubble';
 import { useNavigate } from 'react-router';
 import TopMutualFunds from '../components/Home/TopMutualFunds';
@@ -228,6 +229,7 @@ const Home = () => {
       <SecureSection />
       <InvestmentReturns />
       <TopMutualFunds/>
+      <LatestNews/>
       <AssetAllocation />
       <AMCMarquee />
       <Chatbot />

@@ -164,6 +164,7 @@ import SIPReadyReckoner from './components/more/SIPReadyReckoner';
 import UnderstandingMarkets from './components/more/UnderstandingMarkets';
 import SIPvsSIPTopUp from './components/more/SipVsSipTopUp';
 import WhyStartSIPEarlyPage from './components/more/WhyStartSipEarly';
+import News from './pages/News';
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react';
 // import { HelmetProvider } from 'react-helmet-async';
@@ -178,6 +179,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <AboutUs /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/news", element: <News /> },
       { path: "/privacy_policy", element: <PrivacyPolicy/> },
       { path: "/terms_and_conditions", element: <TermsAndConditions/> },
       { path: "/disclaimer", element: <DisclaimerAndDisclosures/> },
