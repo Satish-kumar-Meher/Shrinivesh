@@ -114,7 +114,8 @@ export default function SecureSection() {
 
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button className={`px-6 py-2 rounded-md ${darkMode ? "bg-[#10e2ea] text-black" : "bg-[#0e6371] text-white"} hover:bg-emerald-700 hover:text-white`}>
-            Start Investing with us
+
+           <a href="https://invest.shrinivesh.com/client/signup">Start Investing with us</a>
           </button>
           <button onClick={() => navigate("/contact")} className="px-6 py-2 rounded-md bg-[#efe043] text-black hover:text-white hover:bg-emerald-900 transition">
             Get Call Back
