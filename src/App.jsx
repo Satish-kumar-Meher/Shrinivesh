@@ -157,6 +157,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import DisclaimerAndDisclosures from './pages/DisclaimerAndDisclosures';
 import UsefulLinks from './pages/UsefulLinks';
+import MutualFunds from './pages/MutualFunds';
+import MutualFundDetails from './pages/MutualFundDetails';
 import SIPToolsCards from './components/more/SIPToolsCards';
 import SipTopUpTable from './components/more/SIPTopUpReadyReckoner';
 import SIPTopUpReadyReckoner from './components/more/SIPTopUpReadyReckoner';
@@ -184,6 +186,8 @@ const router = createBrowserRouter([
       { path: "/terms_and_conditions", element: <TermsAndConditions/> },
       { path: "/disclaimer", element: <DisclaimerAndDisclosures/> },
       { path: "/useful_links", element: <UsefulLinks/> },
+      { path: "/mutual-funds", element: <MutualFunds/> },
+      { path: "/mutual-funds/:amfiCode", element: <MutualFundDetails/> },
 
 
       { path: "/calculators", element: <AllCalculators /> },

@@ -78,7 +78,10 @@ function setJsonLd(jsonLd) {
 function SEO({ path, title, description, image, noindex = false, jsonLd }) {
   useEffect(() => {
     const normalizedPath = typeof path === 'string' ? path : window.location.pathname
-    const conf = seoConfig[normalizedPath] || {}
+    const conf =
+      seoConfig[normalizedPath] ||
+      (normalizedPath.startsWith('/mutual-funds/') ? seoConfig['/mutual-funds/:amfiCode'] : {}) ||
+      {}
 
     const pageTitle = title || conf.title || 'Shri Nivesh'
     const pageDescription = description || conf.description || 'Trusted mutual fund advisor and financial planning partner.'

@@ -205,6 +205,16 @@ export const seoConfig = {
     title: 'Useful Links | Forms & Downloads | Shri Nivesh',
     description: 'Quick access to essential links, forms, and resources for investors.',
     image: defaultImage
+  },
+  '/mutual-funds': {
+    title: 'Mutual Funds | Live NAV, AUM & Returns | Shri Nivesh',
+    description: 'Search live mutual fund data by fund name and compare NAV, AUM, risk, expense ratio, and returns.',
+    image: defaultImage
+  },
+  '/mutual-funds/:amfiCode': {
+    title: 'Mutual Fund Details | Shri Nivesh',
+    description: 'View detailed mutual fund NAV, AUM, returns, risk ratios, expense ratio, and investment minimums.',
+    image: defaultImage
   }
 }
 
