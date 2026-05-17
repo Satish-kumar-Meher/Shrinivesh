@@ -176,10 +176,10 @@ const UsefulLinks = () => {
       title: "🛠️ Mutual Fund Platforms & Services",
       links: [
         { name: "MF Utilities (MFU)", url: "https://mfuonline.com" },
-        { name: "NSE NMF", url: "https://nsenmf.com" },
+        { name: "NSE NMF", url: "https://nseinvest.com/nsemfdesk/login.htm" },
         { name: "Check Your KYC Status (Karvy)", url: "https://karvykra.com/UPanSearchGlobalWithPanExempt.aspx" },
-        { name: "CAMS", url: " https://camsonline.com" },
-        { name: "KFINTECH", url: " https://mfs.kfintech.com/dit/login" },
+        { name: "CAMS", url: "https://camsonline.com" },
+        { name: "KFINTECH", url: "https://iris.kfintech.com/auth/login" },
       ],
     },
 
@@ -188,8 +188,8 @@ const UsefulLinks = () => {
       title: "Validate KYC",
       links: [
         { name: "CVL KRA", url: " https://validate.cvlindia.com/CVLKRAVerification_V1" },
-        { name: "NDML KRA", url: "https://kra.ndml.in/kra/ckyc/#/initiate" },
-        { name: "CAMS KRA", url: "https://camskra.com/PanDetailsUpdate.aspx" },
+        { name: "NDML KRA", url: "https://kra.ndml.in/kra/web/v3/#/kyc/initiate" },
+        { name: "CAMS KRA", url: "https://camskra.com/emvalidation.aspx" },
         { name: "KARVY KRA", url: "https://www.karvykra.com/KYC_Validation/Default.aspx" },
         { name: "NSE KRA", url: " https://www.nsekra.com" },
       ],
